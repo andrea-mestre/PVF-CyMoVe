@@ -24,17 +24,11 @@ const navItems = [
             width="100%"
             height="auto"
         />
-        <a
-            class="brand"
-            href="#introduction"
-            aria-label="Retour à l’introduction"
+
+        <span class="text-l"
+            ><strong>Acculturation</strong><br /><strong>Cybersécurité</strong>
+            <br /> Module interactif 4HFactory</span
         >
-            <span class=""
-                ><strong>Acculturation</strong><br /><strong
-                    >Cybersécurité</strong
-                > <br> Module interactif 4HFactory</span
-            >
-        </a>
 
         <nav class="desktop-nav">
             {
@@ -44,7 +38,7 @@ const navItems = [
                         href={`#${item.id}`}
                     >
                         <span class="nav-dot" aria-hidden="true" />
-                        <span>{item.label}</span>
+                        <span class=" text-l">{item.label}</span>
                     </a>
                 ))
             }
@@ -57,7 +51,7 @@ const navItems = [
     </aside>
 </div>
 <header class="mobile-header">
-    <a class="brand" href="#introduction">
+    
         <img
             class=""
             src="src/assets/cymove2.svg"
@@ -76,7 +70,7 @@ const navItems = [
             ><strong>Acculturation</strong><br /><strong>Cybersécurité</strong
             ></span
         >
-    </a>
+    
     <details class="mobile-menu">
         <summary aria-label="Ouvrir la navigation"
             ><span></span><span></span><span></span></summary
