@@ -4,15 +4,27 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 ---
 
 <Layout>
-	<div class="page-content">
-		<main class="content">
+	<div
+		class="w-full min-h-screen bg-[#effbfe] text-[#071a27] font-sans antialiased"
+	>
+		<main
+			class="max-w-[1120px] mx-auto pt-[54px] pr-[92px] pb-[160px] pl-[30px] [@media(max-width:768px)]:p-4 [@media(max-width:768px)]:pb-[90px]"
+		>
 			<!-- HERO / INTRODUCTION -->
-			<section class="hero section-anchor" id="introduction">
-				<div class="eyebrow">
+			<section class="max-w-[970px] scroll-mt-7" id="introduction">
+				<div
+					class="mb-[7px] text-[#079bcf] text-[10px] font-bold tracking-[0.14em] uppercase"
+				>
 					Parcours d’acculturation à la cybersécurité
 				</div>
-				<h1>Introduction</h1>
-				<p class="lead">
+				<h1
+					class="mb-[11px] text-[#071923] text-[clamp(38px,5vw,66px)] leading-[0.96] tracking-[-0.065em] font-bold"
+				>
+					Introduction
+				</h1>
+				<p
+					class="max-w-[900px] text-[#39505b] text-[14px] leading-[1.68] m-0"
+				>
 					Les enjeux de la cybersécurité sont aujourd’hui partout :
 					dans nos usages, nos outils et les services que nous
 					utilisons chaque jour. Ce parcours propose une lecture
@@ -21,9 +33,14 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 					protéger les données qui comptent.
 				</p>
 
-				<figure class="hero-video card-surface">
-					<div class="video-frame">
+				<figure
+					class="w-full max-w-[915px] my-[28px] mx-0 mb-[100px] py-[28px] px-[33px] pb-[16px] rounded-[14px] bg-[rgba(255,255,255,0.84)] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+				>
+					<div
+						class="overflow-hidden aspect-[16/8.5] bg-[#061521] border-[8px] border-[#09121a] shadow-[0_4px_0_rgba(2,13,21,0.35)]"
+					>
 						<video
+							class="block w-full h-full object-cover"
 							src="https://api.preview.4hfactory.tech/storage/companies/2_6BZLRA9PU5/1486_XB5J2PAIOL/7320_19GEQTXSKH.webm"
 							controls
 							playsinline
@@ -31,140 +48,230 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 							aria-label="Vidéo d’introduction au parcours"
 						></video>
 					</div>
-					<figcaption>Regarder la vidéo d’introduction</figcaption>
+					<figcaption
+						class="mt-3 text-[#7d969f] text-[9px] text-center"
+					>
+						Regarder la vidéo d’introduction
+					</figcaption>
 				</figure>
 			</section>
 
 			<!-- CAS 1 -->
-			<section class="case-section section-anchor" id="cas-1">
-				<div class="section-heading">
-					<span class="section-number">01</span>
-					<h2>Cas 1 - STARLINK <em>Subaru</em></h2>
+			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-1">
+				<div class="flex items-baseline gap-[10px] mb-4">
+					<span
+						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						>01</span
+					>
+					<h2
+						class="m-0 text-[#081924] text-[clamp(25px,3vw,36px)] leading-[1.1] tracking-[-0.052em] font-bold"
+					>
+						Cas 1 - STARLINK <em class="text-[#1b70d3] not-italic"
+							>Subaru</em
+						>
+					</h2>
 				</div>
-				<p class="section-copy">
+				<p
+					class="max-w-[900px] mb-[10px] text-[#46606b] text-[11px] leading-[1.65] m-0"
+				>
 					Dans ce premier cas, nous allons observer comment un service
 					connecté peut exposer des informations sensibles. En
 					comprenant le chemin parcouru par une donnée, il devient
 					plus facile d’identifier les points de vigilance et de
 					limiter la surface d’exposition.
 				</p>
-				<p class="instruction">
+				<p class="mb-4 text-[#0879ae] text-[10px] font-bold">
 					Entrez dans la peau de l’attaquant : lancez la simulation et
 					observez ce qui se passe.
 				</p>
 
-				<div class="terminal-card card-surface">
-					<div class="terminal-top">
-						<span class="terminal-dot red"></span><span
-							class="terminal-dot amber"></span><span
-							class="terminal-dot green"></span><span
-							class="terminal-url"
+				<div
+					class="overflow-hidden rounded-[13px] bg-[#061d2b] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+				>
+					<div
+						class="flex items-center gap-[6px] h-[29px] px-4 border-b border-[rgba(153,227,218,0.13)] text-[#72a69e] text-[9px] font-mono leading-none"
+					>
+						<span
+							class="w-[6px] h-[6px] rounded-full opacity-80 bg-[#de6e7e]"
+						></span>
+						<span
+							class="w-[6px] h-[6px] rounded-full opacity-80 bg-[#ebb35c]"
+						></span>
+						<span
+							class="w-[6px] h-[6px] rounded-full opacity-80 bg-[#68c798]"
+						></span>
+						<span
+							class="flex-1 ml-[10px] text-center tracking-[0.03em]"
 							>portal.subaru-starlink.internal/vehicle/access</span
 						>
 					</div>
-					<div class="terminal-body">
-						<div class="terminal-prompt">
-							$ initiate <span>vehicle_lookup</span> --target starlink
+					<div
+						class="flex flex-col items-center justify-center min-h-[290px] p-9 bg-[radial-gradient(circle_at_50%_0%,rgba(11,100,106,0.18),transparent_54%)] font-mono"
+					>
+						<div class="text-[#b2d5ce] text-[11px]">
+							$ initiate <span class="text-[#61daa9]"
+								>vehicle_lookup</span
+							> --target starlink
 						</div>
-						<button class="action-button" type="button"
-							>Rechercher le véhicule</button
+						<button
+							class="mt-4 py-3 px-7 border border-[#38b06c] rounded-lg text-[#38b06c] bg-[#10382b] font-mono text-[13px] cursor-pointer transition-filter duration-200 hover:brightness-125"
+							type="button"
 						>
-						<div class="terminal-status">
-							<span class="pulse"></span> simulation prête
+							Rechercher le véhicule
+						</button>
+						<div
+							class="mt-4 text-xs text-[#b2d5ce] flex items-center gap-2"
+						>
+							<span
+								class="inline-block w-2 h-2 rounded-full bg-[#68c798] animate-pulse"
+							></span> simulation prête
 						</div>
 					</div>
 				</div>
 
 				<!-- GRILLE DES STATS ET VIDÉO -->
-				<div class="case-one-grid">
-					<div class="stat-stack">
+				<div
+					class="grid grid-cols-2 gap-6 mt-8 [@media(max-width:768px)]:grid-cols-1"
+				>
+					<div class="flex flex-col gap-5">
 						<!-- BLOC LOCALISATION -->
-						<div class="mini-card location-card">
-							<div class="card-header-stat">
-								<strong class="stat-num">5</strong>
-								<span class="stat-label"
+						<div
+							class="bg-white rounded-[20px] p-5 shadow-[0_10px_25px_rgba(11,40,80,0.05)]"
+						>
+							<div class="flex items-baseline gap-[10px] mb-3">
+								<strong
+									class="text-[32px] font-extrabold text-[#2a6cf5] leading-none"
+									>5</strong
+								>
+								<span
+									class="text-[10px] font-extrabold text-black tracking-[0.08em]"
 									>MÈTRES DE LOCALISATION PRÉCISE</span
 								>
 							</div>
-							<div class="location-visual">
+							<div
+								class="flex items-center justify-between pt-[10px] px-[10px] pb-0"
+							>
 								<img
 									src="src/assets/car.png"
 									alt="Subaru bleue"
-									class="car-img"
+									class="h-[45px] w-auto object-contain"
 								/>
-								<div class="blue-arrow"></div>
+								<div
+									class="flex-1 h-[0.5px] bg-[#4182f7] mx-4 relative before:content-[''] before:absolute before:-top-[3px] before:left-0 before:border-solid before:border-y-transparent before:border-r-[#4182f7] before:border-y-[4px] before:border-r-[6px] before:border-l-0 after:content-[''] after:absolute after:-top-[3px] after:right-0 after:border-solid after:border-y-transparent after:border-l-[#4182f7] after:border-y-[4px] after:border-l-[6px] after:border-r-0"
+								>
+								</div>
 								<img
 									src="src/assets/house.png"
 									alt="Maison"
-									class="house-img"
+									class="h-[60px] w-auto object-contain"
 								/>
 							</div>
 						</div>
 
-						<!-- SOUS-GRILLE 2 CARTE (PAYS + INFOS) -->
-						<div class="sub-cards-grid">
-							<div class="mini-card sub-card">
-								<div class="card-header-stat">
-									<strong class="stat-num">3</strong>
-									<span class="stat-label"
+						<!-- SOUS-GRILLE 2 CARTE -->
+						<div
+							class="grid grid-cols-2 gap-5 [@media(max-width:768px)]:grid-cols-1"
+						>
+							<div
+								class="bg-white rounded-[20px] p-5 shadow-[0_10px_25px_rgba(11,40,80,0.05)] flex flex-col justify-between"
+							>
+								<div
+									class="flex items-baseline gap-[10px] mb-3"
+								>
+									<strong
+										class="text-[32px] font-extrabold text-[#2a6cf5] leading-none"
+										>3</strong
+									>
+									<span
+										class="text-[10px] font-extrabold text-black tracking-[0.08em]"
 										>PAYS CONCERNÉS</span
 									>
 								</div>
-								<div class="countries-list">
-									<div class="country-item">
+								<div
+									class="flex items-end justify-between gap-2 mt-3"
+								>
+									<div
+										class="flex flex-col items-center gap-[6px]"
+									>
 										<img
 											src="src/assets/canada.svg"
 											alt="Canada"
-											class="flag-icon"
+											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
-										<span class="country-name">CANADA</span>
+										<span
+											class="text-[8px] font-extrabold text-[#2a6cf5]"
+											>CANADA</span
+										>
 									</div>
-									<div class="country-item">
+									<div
+										class="flex flex-col items-center gap-[6px]"
+									>
 										<img
 											src="src/assets/usa.svg"
 											alt="États-Unis"
-											class="flag-icon"
+											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
-										<span class="country-name"
+										<span
+											class="text-[8px] font-extrabold text-[#2a6cf5]"
 											>ETATS-UNIS</span
 										>
 									</div>
-									<div class="country-item">
+									<div
+										class="flex flex-col items-center gap-[6px]"
+									>
 										<img
 											src="src/assets/japan.svg"
 											alt="Japon"
-											class="flag-icon"
+											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
-										<span class="country-name">JAPON</span>
+										<span
+											class="text-[8px] font-extrabold text-[#2a6cf5]"
+											>JAPON</span
+										>
 									</div>
 								</div>
 							</div>
 
-							<div class="mini-card sub-card">
-								<div class="card-header-stat">
-									<strong class="stat-num">4</strong>
-									<span class="stat-label"
+							<div
+								class="bg-white rounded-[20px] p-5 shadow-[0_10px_25px_rgba(11,40,80,0.05)] flex flex-col justify-between"
+							>
+								<div
+									class="flex items-baseline gap-[10px] mb-3"
+								>
+									<strong
+										class="text-[32px] font-extrabold text-[#2a6cf5] leading-none"
+										>4</strong
+									>
+									<span
+										class="text-[10px] font-extrabold text-black tracking-[0.08em]"
 										>INFORMATIONS POUR ENTRER</span
 									>
 								</div>
-								<div class="info-placeholder"></div>
+								<div
+									class="w-[50px] h-[18px] bg-[#dcdcdc] rounded-[6px] mt-3"
+								>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- CARTE VIDÉO DEMO -->
-					<div class="video-card">
-						<div class="video-frame-container">
+					<div
+						class="bg-white rounded-[20px] p-4 shadow-[0_10px_25px_rgba(11,40,80,0.05)] flex flex-col justify-between"
+					>
+						<div
+							class="w-full aspect-[16/9] rounded-xl overflow-hidden bg-black"
+						>
 							<iframe
+								class="w-full h-full border-0"
 								src="https://www.youtube.com/embed/0i8juy6RPBI?si=LSWO_fELUqUtbnr9"
 								title="Démo Subaru"
-								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							>
-							</iframe>
+								allowfullscreen></iframe>
 						</div>
-						<figcaption class="video-caption">
+						<figcaption
+							class="mt-[14px] text-[11px] text-[#7288a2] text-center leading-[1.4]"
+						>
 							Prise de contrôle d’une Subaru en utilisant la
 							plaque d’immatriculation en environ 10 secondes
 						</figcaption>
@@ -173,120 +280,224 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			</section>
 
 			<!-- CAS 2 -->
-			<section class="case-section section-anchor" id="cas-2">
-				<div class="section-heading">
-					<span class="section-number">02</span>
-					<h2>Cas 2 - Attaque de l’homme du milieu <em>BMW</em></h2>
+			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-2">
+				<div class="flex items-baseline gap-[10px] mb-4">
+					<span
+						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						>02</span
+					>
+					<h2
+						class="m-0 text-[#081924] text-[clamp(25px,3vw,36px)] leading-[1.1] tracking-[-0.052em] font-bold"
+					>
+						Cas 2 - Attaque de l’homme du milieu <em
+							class="text-[#1b70d3] not-italic">BMW</em
+						>
+					</h2>
 				</div>
-				<p class="section-copy">
+				<p
+					class="max-w-[900px] mb-[10px] text-[#46606b] text-[11px] leading-[1.65] m-0"
+				>
 					Deux chercheurs en sécurité ont découvert une faille dans le
 					service connecté d’un constructeur automobile. Cette
 					démonstration permet de comprendre comment une
 					fonctionnalité pratique peut devenir un vecteur d’exposition
 					lorsqu’elle n’est pas suffisamment protégée.
 				</p>
-				<p class="instruction">
+				<p class="mb-4 text-[#0879ae] text-[10px] font-bold">
 					Explorez le scénario puis retenez une idée essentielle : une
 					donnée utile doit aussi rester maîtrisée.
 				</p>
 
 				<AttackDiagram />
 
-				<div class="metrics-wrapper">
-					<div class="metric-card card-surface metric-main">
-						<strong id="vehicle-counter" data-target="2200000"
-							>0</strong
+				<!-- BLOCS MÉTRIQUES CAS 2 (Agrandis et mieux présentés) -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[960px] mx-auto mt-10"
+				>
+					<div
+						class="min-h-[150px] flex flex-col items-center justify-center p-6 rounded-[20px] bg-white border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)] text-center transition-transform hover:-translate-y-1 duration-200"
+					>
+						<strong
+							id="vehicle-counter"
+							class="text-[#3680d7] text-[42px] font-extrabold leading-none"
+							data-target="2200000">0</strong
 						>
-						<span>de véhicules concernés</span>
+						<span
+							class="mt-2 text-[#1768b8] text-[15px] font-extrabold"
+							>de véhicules concernés</span
+						>
 					</div>
 
-					<div class="metric-card card-surface metric-brands">
-						<span class="metric-label">3 marques concernées</span>
-						<div class="brands-logos">
+					<div
+						class="min-h-[150px] flex flex-col items-center justify-center p-6 rounded-[20px] bg-white border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)] text-center transition-transform hover:-translate-y-1 duration-200"
+					>
+						<span
+							class="text-[#3680d7] text-[13px] font-extrabold tracking-[0.05em] mb-4 uppercase"
+							>3 marques concernées</span
+						>
+						<div class="flex justify-center items-center gap-5">
 							<img
 								src="src/assets/image14.svg"
 								alt="Rolls-Royce"
+								class="h-9 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
 							/>
-							<img src="src/assets/image15.svg" alt="MINI" />
-							<img src="src/assets/image16.svg" alt="BMW" />
+							<img
+								src="src/assets/image15.svg"
+								alt="MINI"
+								class="h-9 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
+							/>
+							<img
+								src="src/assets/image16.svg"
+								alt="BMW"
+								class="h-9 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
+							/>
 						</div>
 					</div>
-					<div class="metric-card card-surface metric-time">
-						<strong id="hack-time-counter" data-target="10"
-							>0</strong
+
+					<div
+						class="min-h-[150px] flex flex-col items-center justify-center p-6 rounded-[20px] bg-white border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)] text-center transition-transform hover:-translate-y-1 duration-200"
+					>
+						<strong
+							id="hack-time-counter"
+							class="text-[#d75f36] text-[42px] font-extrabold leading-none"
+							data-target="10">0</strong
 						>
-						<span>minutes pour déverrouiller</span>
+						<span
+							class="mt-2 text-[#b84f17] text-[13px] font-extrabold"
+							>minutes pour déverrouiller</span
+						>
 					</div>
 				</div>
 			</section>
 
-			<!-- CAS 3 -->
-			<section class="case-section case-three section-anchor" id="cas-3">
-				<div class="section-heading">
-					<span class="section-number">03</span>
-					<h2>Cas 3 - Clonage clé <em>Tesla Model S</em></h2>
+			<!-- CAS 3 (QUIZ HARMONISÉ ET RÉDUIT) -->
+			<section class="max-w-[990px] mb-[130px] scroll-mt-7" id="cas-3">
+				<div class="flex items-baseline gap-[10px] mb-4">
+					<span
+						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						>03</span
+					>
+					<h2
+						class="m-0 text-[#081924] text-[clamp(25px,3vw,36px)] leading-[1.1] tracking-[-0.052em] font-bold"
+					>
+						Cas 3 - Clonage clé <em
+							class="text-[#1b70d3] not-italic">Tesla Model S</em
+						>
+					</h2>
 				</div>
-				<p class="section-copy">
+				<p
+					class="max-w-[900px] mb-[10px] text-[#46606b] text-[11px] leading-[1.65] m-0"
+				>
 					En 2018, des chercheurs belges ont mis en évidence une
 					faiblesse permettant de cloner une clé de véhicule.
 					L’exemple rappelle qu’un objet physique peut aussi être une
 					interface numérique : la sécurité dépend autant du protocole
 					que de l’usage qui en est fait.
 				</p>
-				<p class="instruction">
+				<p class="mb-4 text-[#0879ae] text-[10px] font-bold">
 					Selon vous, combien de temps faut-il pour cloner une clé ?
 					Faites votre choix.
 				</p>
 
-				<!-- QUIZ CARD -->
-				<div id="quiz-container" class="quiz-card">
-					<div class="quiz-top">
-						<span class="quiz-title-label">Quiz</span>
-						<span id="quiz-progress"></span>
+				<!-- QUIZ CARD REDIMENSIONNÉE ET HARMONISÉE -->
+				<div
+					id="quiz-container"
+					class="relative w-full max-w-[680px] min-h-auto mx-auto mt-[38px] py-[30px] px-[35px] bg-[linear-gradient(345.37deg,rgba(255,255,255,0.63)-38.59%,#107AA5_138.59%)] shadow-[0px_18px_48px_rgba(6,27,43,0.086),inset_0px_1px_0px_rgba(255,255,255,0.86)] rounded-[24px] overflow-hidden [@media(max-width:840px)]:py-[20px] [@media(max-width:840px)]:px-[20px]"
+				>
+					<div class="flex justify-between items-center w-full mb-4">
+						<span
+							class="font-black text-[24px] leading-[28px] text-[rgba(16,122,165,0.46)]"
+							>Quiz</span
+						>
+						<span
+							id="quiz-progress"
+							class="font-black text-[24px] leading-[28px] text-[rgba(16,122,165,0.46)]"
+						></span>
 					</div>
 
-					<h3 id="quiz-question"></h3>
+					<h3
+						id="quiz-question"
+						class="w-full font-bold text-[clamp(18px,2.2vw,24px)] leading-[1.3] text-white mb-6"
+					>
+					</h3>
 
-					<div id="quiz-options" class="quiz-options"></div>
+					<div
+						id="quiz-options"
+						class="flex flex-col gap-3 w-full items-center"
+					>
+					</div>
 				</div>
 			</section>
 
 			<!-- CAS 4 -->
-			<section class="case-section section-anchor" id="cas-4">
-				<div class="section-heading">
-					<span class="section-number">04</span>
-					<h2>Cas 4 - CAN via phare <em>Toyota Lexus</em></h2>
+			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-4">
+				<div class="flex items-baseline gap-[10px] mb-4">
+					<span
+						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						>04</span
+					>
+					<h2
+						class="m-0 text-[#081924] text-[clamp(25px,3vw,36px)] leading-[1.1] tracking-[-0.052em] font-bold"
+					>
+						Cas 4 - CAN via phare <em
+							class="text-[#1b70d3] not-italic">Toyota Lexus</em
+						>
+					</h2>
 				</div>
-				<p class="section-copy">
+				<p
+					class="max-w-[900px] mb-[10px] text-[#46606b] text-[11px] leading-[1.65] m-0"
+				>
 					En 2022, un vol de véhicule a mis en lumière une méthode
 					inédite : l’injection de messages sur le réseau CAN via le
 					connecteur d’un phare. Cette attaque permet de contourner la
 					protection antidémarrage et de déverrouiller les portes sans
 					la clé.
 				</p>
-				<p class="instruction">
+				<p class="mb-4 text-[#0879ae] text-[10px] font-bold">
 					Observez les différentes étapes de l’attaque ci-dessous.
 				</p>
 
-				<div class="steps-grid">
-					<div class="step-card card-surface"></div>
-					<div class="step-card card-surface"></div>
-					<div class="step-card card-surface"></div>
-					<div class="step-card card-surface"></div>
+				<div
+					class="grid grid-cols-4 gap-4 mt-8 [@media(max-width:768px)]:grid-cols-2"
+				>
+					<div
+						class="min-h-[140px] rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+					>
+					</div>
+					<div
+						class="min-h-[140px] rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+					>
+					</div>
+					<div
+						class="min-h-[140px] rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+					>
+					</div>
+					<div
+						class="min-h-[140px] rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+					>
+					</div>
 				</div>
 			</section>
 
 			<!-- SYNTHÈSE -->
 			<section
-				class="synthesis section-anchor"
+				class="max-w-[760px] py-7 px-8 border-t border-[#b8e5f1] scroll-mt-7"
 				id="synthese"
 				aria-labelledby="synthesis-title"
 			>
-				<span class="section-number">À retenir</span>
-				<h2 id="synthesis-title">
+				<span
+					class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+					>À retenir</span
+				>
+				<h2
+					id="synthesis-title"
+					class="my-3 text-[#081924] text-[clamp(25px,3vw,36px)] leading-[1.1] tracking-[-0.052em] font-bold"
+				>
 					La sécurité commence par la curiosité.
 				</h2>
-				<p>
+				<p
+					class="max-w-[600px] text-[#46606b] text-[12px] leading-[1.6] m-0"
+				>
 					Chaque scénario nous invite à regarder autrement les objets
 					et services qui nous entourent. Une question posée au bon
 					moment peut empêcher qu’une information sorte de son cadre.
@@ -456,6 +667,8 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 		q.options.forEach((opt, index) => {
 			const btn = document.createElement("button");
 			btn.type = "button";
+			// Boutons adaptés à la taille réduite et harmonisée du conteneur de quiz
+			btn.className = `flex flex-row justify-center items-center py-2.5 px-4 gap-[10px] w-full max-w-[540px] h-[50px] bg-[rgba(255,255,255,0.25)] shadow-[0px_12px_30px_rgba(6,27,43,0.08),inset_0px_1px_0px_rgba(255,255,255,0.86)] rounded-[20px] border-none font-sans font-normal text-[17px] leading-snug text-[#107AA5] cursor-pointer transition-all duration-200 hover:bg-[rgba(255,255,255,0.45)] hover:-translate-y-0.5`;
 			btn.textContent = opt;
 			btn.onclick = () => selectAnswer(index);
 			optionsEl.appendChild(btn);
@@ -483,7 +696,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 		progressEl.textContent = "";
 
 		const result = document.createElement("p");
-		result.className = "quiz-result";
+		result.className = "mt-6 text-white text-[20px] font-bold text-center";
 		result.textContent = `Tu as ${score} bonne(s) réponse(s) sur ${quizData.length}.`;
 
 		optionsEl.appendChild(result);
@@ -491,613 +704,3 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 
 	loadQuestion();
 </script>
-
-<style>
-	:global(*) {
-		box-sizing: border-box;
-	}
-	:global(:root) {
-		font-family: "Inter", system-ui, sans-serif;
-		color: #071a27;
-		background: #effbfe;
-		font-synthesis: none;
-	}
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-	:global(body) {
-		margin: 0;
-		min-width: 320px;
-		background: #effbfe;
-	}
-	:global(button),
-	:global(a) {
-		font: inherit;
-	}
-	:global(button) {
-		cursor: pointer;
-	}
-
-	.content {
-		width: min(100%, 1120px);
-		padding: 54px 92px 160px 30px;
-		margin: 0 auto;
-	}
-	.section-anchor {
-		scroll-margin-top: 28px;
-	}
-	.hero {
-		max-width: 970px;
-	}
-	.eyebrow {
-		margin-bottom: 7px;
-		color: #079bcf;
-		font-size: 10px;
-		font-weight: 700;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-	}
-	h1,
-	h2,
-	h3,
-	p {
-		margin-top: 0;
-	}
-	h1 {
-		margin-bottom: 11px;
-		color: #071923;
-		font-size: clamp(38px, 5vw, 66px);
-		line-height: 0.96;
-		letter-spacing: -0.065em;
-	}
-	.lead {
-		max-width: 900px;
-		color: #39505b;
-		font-size: 14px;
-		line-height: 1.68;
-	}
-	.card-surface {
-		border: 1px solid rgba(157, 210, 225, 0.6);
-		box-shadow:
-			0 17px 32px rgba(79, 156, 178, 0.12),
-			0 2px 7px rgba(62, 123, 141, 0.08);
-	}
-
-	.metrics-wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: stretch;
-		gap: 26px;
-		margin-top: 40px;
-	}
-
-	.metric-main,
-	.metric-brands {
-		width: 260px;
-		min-height: 130px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 18px 20px;
-		border-radius: 14px;
-		background: rgba(255, 255, 255, 0.78);
-	}
-
-	.metric-main strong {
-		color: #3680d7;
-		font-size: 38px;
-		line-height: 1;
-	}
-
-	.metric-main span {
-		margin-top: 6px;
-		color: #1768b8;
-		font-size: 20px;
-		font-weight: 800;
-	}
-
-	.metric-brands .metric-label {
-		color: #3680d7;
-		font-size: 15px;
-		font-weight: 800;
-		letter-spacing: 0.05em;
-		margin-bottom: 12px;
-		text-transform: uppercase;
-	}
-
-	.brands-logos {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 18px;
-	}
-
-	.brands-logos img {
-		height: 40px;
-		width: auto;
-		object-fit: contain;
-		filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
-	}
-
-	.metric-time strong {
-		color: #d75f36;
-		font-size: 34px;
-		line-height: 1;
-	}
-
-	.metric-time span {
-		margin-top: 6px;
-		color: #b84f17;
-		font-size: 11px;
-		font-weight: 800;
-	}
-
-	/* HERO VIDEO */
-	.hero-video {
-		width: min(100%, 915px);
-		margin: 28px 0 100px;
-		padding: 28px 33px 16px;
-		border-radius: 14px;
-		background: rgba(255, 255, 255, 0.84);
-	}
-	.video-frame {
-		overflow: hidden;
-		aspect-ratio: 16 / 8.5;
-		background: #061521;
-		border: 8px solid #09121a;
-		box-shadow: 0 4px 0 rgba(2, 13, 21, 0.35);
-	}
-	.video-frame video {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	figcaption {
-		color: #7d969f;
-		font-size: 9px;
-		text-align: center;
-	}
-	.hero-video figcaption {
-		margin-top: 12px;
-	}
-
-	/* --- DESIGN DU QUIZ (CAS 3) --- */
-	.quiz-card {
-		width: min(100%, 460px);
-		margin: 38px auto 0;
-		padding: 32px 34px;
-		border-radius: 20px;
-		background: linear-gradient(
-			165deg,
-			rgba(113, 194, 217, 0.95) 0%,
-			rgba(145, 214, 230, 0.88) 50%,
-			rgba(183, 231, 241, 0.85) 100%
-		);
-		border: 1px solid rgba(255, 255, 255, 0.6);
-		box-shadow:
-			0 20px 40px rgba(50, 130, 155, 0.15),
-			0 5px 15px rgba(0, 0, 0, 0.05);
-	}
-
-	.quiz-top {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 22px;
-	}
-
-	.quiz-title-label {
-		color: #215163;
-		font-size: 16px;
-		font-weight: 800;
-		letter-spacing: -0.02em;
-	}
-
-	#quiz-progress {
-		color: #215163;
-		font-size: 15px;
-		font-weight: 700;
-	}
-
-	#quiz-question {
-		margin-bottom: 26px;
-		color: #ffffff;
-		font-size: 18px;
-		line-height: 1.35;
-		font-weight: 700;
-		letter-spacing: -0.02em;
-		text-shadow: 0 1px 2px rgba(30, 103, 122, 0.2);
-	}
-
-	.quiz-options {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-
-	/* Cadre des propositions de réponses bien visible (effet pilule + contour net) */
-	.quiz-options button {
-		display: block;
-		width: 100%;
-		padding: 14px 20px;
-		border-radius: 28px;
-		border: 1.5px solid rgba(255, 255, 255, 0.85);
-		background: rgba(255, 255, 255, 0.72);
-		color: #1a495c;
-		font-size: 14px;
-		font-weight: 700;
-		text-align: center;
-		box-shadow:
-			0 4px 12px rgba(25, 90, 110, 0.1),
-			inset 0 1px 2px rgba(255, 255, 255, 0.9);
-		transition: all 0.2s ease;
-	}
-
-	.quiz-options button:hover {
-		background: rgba(255, 255, 255, 0.95);
-		border-color: #ffffff;
-		transform: translateY(-2px);
-		box-shadow:
-			0 6px 16px rgba(25, 90, 110, 0.15),
-			inset 0 1px 2px rgba(255, 255, 255, 1);
-	}
-
-	.quiz-result {
-		margin-top: 20px;
-		color: #fff;
-		font-size: 16px;
-		font-weight: 700;
-		text-align: center;
-		text-shadow: 0 1px 2px rgba(30, 103, 122, 0.2);
-	}
-	/* ------------------------------------- */
-
-	/* CASES GENERAL */
-	.case-section {
-		max-width: 990px;
-		margin-bottom: 116px;
-	}
-	.section-heading {
-		display: flex;
-		align-items: baseline;
-		gap: 10px;
-		margin-bottom: 16px;
-	}
-	.section-number {
-		color: #08a1d4;
-		font-size: 11px;
-		font-weight: 800;
-		letter-spacing: 0.13em;
-		text-transform: uppercase;
-	}
-	h2 {
-		margin-bottom: 0;
-		color: #081924;
-		font-size: clamp(25px, 3vw, 36px);
-		line-height: 1.1;
-		letter-spacing: -0.052em;
-	}
-	h2 em {
-		color: #1b70d3;
-		font-style: normal;
-	}
-	.section-copy {
-		max-width: 900px;
-		margin-bottom: 10px;
-		color: #46606b;
-		font-size: 11px;
-		line-height: 1.65;
-	}
-	.instruction {
-		margin-bottom: 16px;
-		color: #0879ae;
-		font-size: 10px;
-		font-weight: 700;
-	}
-
-	.terminal-card {
-		overflow: hidden;
-		border-radius: 13px;
-		background: #061d2b;
-	}
-	.terminal-top {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-		height: 29px;
-		padding: 0 16px;
-		border-bottom: 1px solid rgba(153, 227, 218, 0.13);
-		color: #72a69e;
-		font: 9px/1 monospace;
-	}
-	.terminal-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 99px;
-		opacity: 0.8;
-	}
-	.terminal-dot.red {
-		background: #de6e7e;
-	}
-	.terminal-dot.amber {
-		background: #ebb35c;
-	}
-	.terminal-dot.green {
-		background: #68c798;
-	}
-	.terminal-url {
-		flex: 1;
-		margin-left: 10px;
-		text-align: center;
-		letter-spacing: 0.03em;
-	}
-	.terminal-lock {
-		color: #72d6c9;
-	}
-	.terminal-body {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-height: 290px;
-		padding: 36px;
-		background: radial-gradient(
-			circle at 50% 0%,
-			rgba(11, 100, 106, 0.18),
-			transparent 54%
-		);
-		font-family: monospace;
-	}
-	.terminal-prompt {
-		color: #b2d5ce;
-		font-size: 11px;
-	}
-	.terminal-prompt span {
-		color: #61daa9;
-	}
-	.action-button {
-		padding: 12px 28px;
-		border: 1px solid #38b06c;
-		border-radius: 8px;
-		color: #38b06c;
-		background: #10382b;
-		font-family: monospace;
-		font-size: 13px;
-		transition: filter 0.2s ease;
-	}
-	.action-button:hover {
-		filter: brightness(1.2);
-	}
-
-	/* GRILLE CAS 1 */
-	.case-one-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 24px;
-		margin-top: 32px;
-	}
-	.stat-stack {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	/* MINI-CARDS */
-	.mini-card {
-		background: #ffffff;
-		border-radius: 20px;
-		padding: 20px 24px;
-		box-shadow: 0 10px 25px rgba(11, 40, 80, 0.05);
-	}
-	.card-header-stat {
-		display: flex;
-		align-items: baseline;
-		gap: 10px;
-		margin-bottom: 12px;
-	}
-	.stat-num {
-		font-size: 32px;
-		font-weight: 800;
-		color: #2a6cf5;
-		line-height: 1;
-	}
-	.stat-label {
-		font-size: 10px;
-		font-weight: 800;
-		color: #000000;
-		letter-spacing: 0.08em;
-	}
-
-	/* LOCALISATION VISUAL */
-	.location-visual {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 10px 10px 0;
-	}
-	.car-img {
-		height: 45px;
-		width: auto;
-		object-fit: contain;
-	}
-	.house-img {
-		height: 60px;
-		width: auto;
-		object-fit: contain;
-	}
-	.blue-arrow {
-		flex: 1;
-		height: 2px;
-		background: #4182f7;
-		margin: 0 16px;
-		position: relative;
-	}
-	.blue-arrow::before,
-	.blue-arrow::after {
-		content: "";
-		position: absolute;
-		top: -3px;
-		width: 0;
-		height: 0;
-		border-style: solid;
-	}
-	.blue-arrow::before {
-		left: 0;
-		border-width: 4px 6px 4px 0;
-		border-color: transparent #4182f7 transparent transparent;
-	}
-	.blue-arrow::after {
-		right: 0;
-		border-width: 4px 0 4px 6px;
-		border-color: transparent transparent transparent #4182f7;
-	}
-
-	/* SOUS-GRILLE PAYS ET INFOS */
-	.sub-cards-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
-	}
-	.sub-card {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	.countries-list {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 8px;
-		margin-top: 12px;
-	}
-	.country-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 6px;
-	}
-	.flag-icon {
-		width: 24px;
-		height: 16px;
-		object-fit: cover;
-		border-radius: 2px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-	}
-	.country-name {
-		font-size: 8px;
-		font-weight: 800;
-		color: #2a6cf5;
-	}
-	.info-placeholder {
-		width: 50px;
-		height: 18px;
-		background: #dcdcdc;
-		border-radius: 6px;
-		margin-top: 12px;
-	}
-
-	/* CARTE VIDÉO */
-	.video-card {
-		background: #ffffff;
-		border-radius: 20px;
-		padding: 16px;
-		box-shadow: 0 10px 25px rgba(11, 40, 80, 0.05);
-		display: flex;
-		flex-direction: column;
-	}
-	.video-frame-container {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		border-radius: 12px;
-		overflow: hidden;
-		background: #000000;
-	}
-	.video-frame-container iframe {
-		width: 100%;
-		height: 100%;
-	}
-	.video-caption {
-		margin-top: 14px;
-		font-size: 11px;
-		color: #7288a2;
-		text-align: center;
-		line-height: 1.4;
-	}
-
-	/* CAS 2 METRIC CARD */
-	.metric-card {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 260px;
-		min-height: 110px;
-		margin: 34px auto 0;
-		border-radius: 13px;
-		background: rgba(255, 255, 255, 0.78);
-	}
-	.metric-card strong {
-		color: #3680d7;
-		font-size: 36px;
-		line-height: 1;
-		letter-spacing: 0.01em;
-	}
-	.metric-card span {
-		margin-top: 5px;
-		color: #1768b8;
-		font-size: 10px;
-		font-weight: 800;
-	}
-
-	/* CAS 3 */
-	.case-three {
-		margin-bottom: 130px;
-	}
-
-	/* CAS 4 STEPS GRID */
-	.steps-grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 16px;
-		margin-top: 32px;
-	}
-	.step-card {
-		min-height: 140px;
-		border-radius: 10px;
-		background: #dce7ee;
-	}
-
-	/* SYNTHÈSE */
-	.synthesis {
-		max-width: 760px;
-		padding: 28px 32px;
-		border-top: 1px solid #b8e5f1;
-	}
-	.synthesis h2 {
-		margin: 12px 0 10px;
-	}
-	.synthesis p {
-		max-width: 600px;
-		color: #46606b;
-		font-size: 12px;
-		line-height: 1.6;
-	}
-
-	/* RESPONSIVE */
-	@media (max-width: 768px) {
-		.content {
-			padding: 24px 16px 90px;
-		}
-		.case-one-grid {
-			grid-template-columns: 1fr;
-		}
-		.sub-cards-grid {
-			grid-template-columns: 1fr;
-		}
-		.steps-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-</style>
