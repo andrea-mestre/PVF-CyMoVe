@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AttackDiagram from "../components/AttackDiagram.astro";
+import carImg from "../assets/car.png";
+import houseImg from "../assets/house.png";
+import mapImg from "../assets/map.png"; 
 ---
 
 <Layout>
@@ -13,7 +16,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			<!-- HERO / INTRODUCTION -->
 			<section class="max-w-[970px] scroll-mt-7" id="introduction">
 				<div
-					class="mb-[7px] text-[#079bcf] text-[10px] font-bold tracking-[0.14em] uppercase"
+					class="mb-[7px] text-[#079bcf] text-[12px] font-bold tracking-[0.14em] uppercase"
 				>
 					Parcours d’acculturation à la cybersécurité
 				</div>
@@ -60,7 +63,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-1">
 				<div class="flex items-baseline gap-[10px] mb-4">
 					<span
-						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						class="text-[#08a1d4] text-[12px] font-extrabold tracking-[0.13em] uppercase"
 						>01</span
 					>
 					<h2
@@ -85,11 +88,10 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 					observez ce qui se passe.
 				</p>
 
-				<!-- TERMINAL / SIMULATION INTERACTIVE (BARRE DU HAUT ET CONTENUS TRÈS AGRANDIS) -->
+				<!-- TERMINAL / SIMULATION INTERACTIVE -->
 				<div
 					class="overflow-hidden rounded-[13px] bg-[#061d2b] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
 				>
-					<!-- Barre du haut fortement agrandie -->
 					<div
 						class="flex items-center justify-between h-[48px] px-5 border-b border-[rgba(153,227,218,0.13)] text-[#72a69e] text-[15px] font-mono leading-none"
 					>
@@ -119,7 +121,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 						id="sim-screen"
 						class="min-h-[460px] p-8 bg-[radial-gradient(circle_at_50%_0%,rgba(11,100,106,0.18),transparent_54%)] font-mono flex flex-col justify-center items-center"
 					>
-						<!-- ÉTAPE 0 : Bouton initial -->
+						<!-- ÉTAPE 0 -->
 						<div
 							id="sim-step-0"
 							class="flex flex-col items-center justify-center w-full"
@@ -145,7 +147,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 							</div>
 						</div>
 
-						<!-- ÉTAPE 1 : Vignettes d'identification -->
+						<!-- ÉTAPE 1 -->
 						<div
 							id="sim-step-1"
 							class="hidden w-full max-w-[800px] grid grid-cols-2 gap-8 my-auto animate-[fadeIn_0.5s_ease-out]"
@@ -174,12 +176,12 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 							</div>
 						</div>
 
-						<!-- ÉTAPE 2 : Tableau de bord complet -->
+						<!-- ÉTAPE 2 -->
 						<div
 							id="sim-step-2"
 							class="hidden w-full grid grid-cols-2 gap-6 my-auto"
 						>
-							<!-- Vignette 1 : Carte GPS -->
+							<!-- Vignette 1 : Carte GPS intégrant mapImg -->
 							<div
 								class="border border-[#38b06c] rounded-[14px] bg-[#0a251d]/90 p-5 shadow-[0_0_20px_rgba(56,176,108,0.15)] flex flex-col justify-between animate-[slideUp_0.4s_ease-out]"
 							>
@@ -192,16 +194,18 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 								<div
 									class="relative h-[150px] bg-[#122e25] rounded overflow-hidden flex items-center justify-center border border-[#38b06c]/30"
 								>
+									<!-- Remplacement ou enrichissement du fond par l'image map.png importée -->
+									<img
+										src={mapImg.src}
+										alt="Carte de localisation"
+										class="absolute inset-0 w-full h-full object-cover opacity-60"
+									/>
 									<div
-										class="absolute inset-0 opacity-40 bg-[radial-gradient(#38b06c_1.5px,transparent_1.5px)] [background-size:14px_14px]"
+										class="w-5 h-5 bg-orange-500 rounded-full animate-ping absolute z-10"
 									>
 									</div>
 									<div
-										class="w-5 h-5 bg-orange-500 rounded-full animate-ping absolute"
-									>
-									</div>
-									<div
-										class="w-4 h-4 bg-orange-500 rounded-full absolute"
+										class="w-4 h-4 bg-orange-500 rounded-full absolute z-10"
 									>
 									</div>
 								</div>
@@ -356,7 +360,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 								class="flex items-center justify-between pt-[10px] px-[10px] pb-0"
 							>
 								<img
-									src="src/assets/car.png"
+									src={carImg.src}
 									alt="Subaru bleue"
 									class="h-[45px] w-auto object-contain"
 								/>
@@ -365,7 +369,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 								>
 								</div>
 								<img
-									src="src/assets/house.png"
+									src={houseImg.src}
 									alt="Maison"
 									class="h-[60px] w-auto object-contain"
 								/>
@@ -487,7 +491,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-2">
 				<div class="flex items-baseline gap-[10px] mb-4">
 					<span
-						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						class="text-[#08a1d4] text-[12px] font-extrabold tracking-[0.13em] uppercase"
 						>02</span
 					>
 					<h2
@@ -578,7 +582,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			<section class="max-w-[990px] mb-[130px] scroll-mt-7" id="cas-3">
 				<div class="flex items-baseline gap-[10px] mb-4">
 					<span
-						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						class="text-[#08a1d4] text-[12px] font-extrabold tracking-[0.13em] uppercase"
 						>03</span
 					>
 					<h2
@@ -637,7 +641,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-4">
 				<div class="flex items-baseline gap-[10px] mb-4">
 					<span
-						class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+						class="text-[#08a1d4] text-[12px] font-extrabold tracking-[0.13em] uppercase"
 						>04</span
 					>
 					<h2
@@ -690,7 +694,7 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 				aria-labelledby="synthesis-title"
 			>
 				<span
-					class="text-[#08a1d4] text-[11px] font-extrabold tracking-[0.13em] uppercase"
+					class="text-[#08a1d4] text-[12px] font-extrabold tracking-[0.13em] uppercase"
 					>À retenir</span
 				>
 				<h2
