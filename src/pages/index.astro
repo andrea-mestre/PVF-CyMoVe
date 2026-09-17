@@ -4,6 +4,12 @@ import AttackDiagram from "../components/AttackDiagram.astro";
 import carImg from "../assets/car.png";
 import houseImg from "../assets/house.png";
 import mapImg from "../assets/map.png";
+import CanadaFlag from "../assets/canada.svg";
+import USAFlag from "../assets/usa.svg";
+import JapanFlag from "../assets/japan.svg";
+import RollsRoyceLogo from "../assets/image14.svg";
+import MiniLogo from "../assets/image15.svg";
+import BMWLogo from "../assets/image16.svg";
 ---
 
 <Layout>
@@ -403,7 +409,7 @@ import mapImg from "../assets/map.png";
 										class="flex flex-col items-center gap-[6px]"
 									>
 										<img
-											src="src/assets/canada.svg"
+											src={CanadaFlag.src}
 											alt="Canada"
 											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
@@ -416,7 +422,7 @@ import mapImg from "../assets/map.png";
 										class="flex flex-col items-center gap-[6px]"
 									>
 										<img
-											src="src/assets/usa.svg"
+											src={USAFlag.src}
 											alt="États-Unis"
 											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
@@ -429,7 +435,7 @@ import mapImg from "../assets/map.png";
 										class="flex flex-col items-center gap-[6px]"
 									>
 										<img
-											src="src/assets/japan.svg"
+											src={JapanFlag.src}
 											alt="Japon"
 											class="w-6 h-4 object-cover rounded-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.15)]"
 										/>
@@ -549,17 +555,17 @@ import mapImg from "../assets/map.png";
 							class="flex justify-center items-center justify-between gap-6"
 						>
 							<img
-								src="src/assets/image14.svg"
+								src={RollsRoyceLogo.src}
 								alt="Rolls-Royce"
 								class="h-13 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
 							/>
 							<img
-								src="src/assets/image15.svg"
+								src={MiniLogo.src}
 								alt="MINI"
 								class="h-13 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
 							/>
 							<img
-								src="src/assets/image16.svg"
+								src={BMWLogo.src}
 								alt="BMW"
 								class="h-13 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]"
 							/>

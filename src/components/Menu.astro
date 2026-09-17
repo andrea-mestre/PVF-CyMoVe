@@ -7,20 +7,23 @@ const navItems = [
     { id: "cas-4", label: "Cas 4" },
     { id: "synthese", label: "Synthèse" },
 ];
+
+import CymoveLogo from "../assets/cymove2.svg";
+import PoleVehiculeLogo from "../assets/pôlevéhiculedufutur.svg";
 ---
 
 <div class="menu w-70 mr-0">
     <aside class="sidebar w-70" aria-label="Navigation du parcours">
         <div class="brand-logos">
             <img
-                src="src/assets/cymove2.svg"
+                src={CymoveLogo.src}
                 alt="Logo CyMove"
                 width="60%"
                 height="auto"
                 loading="eager"
             />
             <img
-                src="src/assets/pôlevéhiculedufutur.svg"
+                src={PoleVehiculeLogo.src}
                 alt="Logo Pôle Véhicule du Futur"
                 width="75%"
                 height="auto"
@@ -50,7 +53,7 @@ const navItems = [
 <header class="mobile-header">
     <div class="mobile-brand">
         <img
-            src="src/assets/cymove2.svg"
+            src={CymoveLogo.src}
             alt="Logo CyMove"
             width="40"
             height="auto"
