@@ -28,16 +28,16 @@ const stepCards = cards
   .sort((a, b) => a.step - b.step);
 ---
 
-<section class="flipcard-grid-wrapper" aria-label="Jeu de cartes pédagogiques">
+<section class="relative w-full py-8 [font-family:-apple-system,'Segoe_UI',system-ui,sans-serif]" aria-label="Jeu de cartes pédagogiques">
   <noscript>
-    <p class="flipcard-noscript">
+    <p class="mx-auto mb-6 max-w-[700px] rounded-lg border border-[#f3e0b2] bg-[#fef3c7] px-4 py-3 text-center text-sm text-[#92400e]">
       Les cartes ci-dessous sont entièrement consultables.
       Pour activer l'animation de retournement, activez JavaScript dans votre navigateur.
     </p>
   </noscript>
 
   {/* ── SVG Defs partagées (textures) ── */}
-  <svg class="flipcard-svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <svg class="absolute h-0 w-0 overflow-hidden pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <pattern id="flipcard-texture" width="4" height="4" patternTransform="scale(2.5)" patternUnits="userSpaceOnUse">
         <path fill="#000000" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path>
@@ -61,26 +61,23 @@ const stepCards = cards
 
   {/* ── Étapes ── */}
   {stepCards.length > 0 && (
-    <div class="flipcard-section">
-      <h3 class="flipcard-section-title">
-        <span class="flipcard-section-icon flipcard-section-icon--etape">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </span>
+    <div class="mb-9">
+      <h3 class="mb-[18px] flex items-center gap-2 text-xl font-bold tracking-[-0.01em] text-[#101828]">
         Étapes de l'attaque
       </h3>
-      <div class="flipcard-row flipcard-row--steps">
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5">
         {stepCards.map((card) => (
           <button
             type="button"
-            class="flipcard flipcard--etape"
+            class="group block w-full cursor-pointer select-none appearance-none border-0 bg-transparent p-0 text-left [aspect-ratio:3/4] [font:inherit] [perspective:900px] [-webkit-tap-highlight-color:transparent] [filter:drop-shadow(0_4px_12px_rgba(16,24,40,0.08))] transition-[filter] duration-200 ease-in-out hover:[filter:drop-shadow(0_12px_28px_rgba(16,24,40,0.16))] focus-visible:rounded-2xl focus-visible:outline-[3px] focus-visible:outline-[#2F6FED] focus-visible:outline-offset-4"
             data-flipcard
             aria-pressed="false"
           >
-            <div class="flipcard-inner">
+            <div class="relative h-full w-full [transform-style:preserve-3d] [will-change:transform] [transition:transform_0.75s_linear(0,0.008_1.1%,0.031_2.2%,0.129_4.8%,0.257_7.2%,0.671_14.2%,0.789_16.5%,0.881_18.6%,0.957_20.7%,1.019_22.9%,1.063_25.1%,1.094_27.4%,1.114_30.7%,1.112_34.5%,1.018_49.9%,0.99_59.1%,1)] hover:[transform:scale(1.04)_rotate3d(1,1,0,2deg)] aria-[pressed=true]:[transform:rotateY(180deg)] aria-[pressed=true]:hover:[transform:rotateY(180deg)_scale(1.04)_rotate3d(1,1,0,2deg)] motion-reduce:[transform:none] motion-reduce:transition-none">
               {/* RECTO */}
-              <div class="flipcard-face flipcard-front flipcard-front--etape">
+              <div class="absolute inset-0 z-[2] flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl bg-white px-[18px] py-6 [backface-visibility:hidden] motion-reduce:[backface-visibility:visible] motion-reduce:transition-opacity motion-reduce:duration-300 group-aria-[pressed=true]:motion-reduce:pointer-events-none group-aria-[pressed=true]:motion-reduce:opacity-0">
                 <svg
-                  class="flipcard-step-illustration"
+                  class="absolute inset-0 z-0 h-full w-full rounded-[15px] pointer-events-none"
                   viewBox="0 0 252 346"
                   preserveAspectRatio="none"
                   aria-hidden="true"
@@ -103,18 +100,18 @@ const stepCards = cards
                   />
                   </g>
                 </svg>
-                <span class="flipcard-step-number">{card.step}</span>
-                <span class="flipcard-step-label">Étape</span>
-                <span class="flipcard-hint">
-                  <svg class="flipcard-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                <span class="absolute left-1/2 top-[32%] z-[1] -translate-x-1/2 text-[clamp(48px,5vw,70px)] font-bold leading-none text-[#a6c4ff]">{card.step}</span>
+                <span class="absolute left-1/2 top-[55%] z-[1] -translate-x-1/2 whitespace-nowrap text-[clamp(15px,1.7vw,22px)] font-bold uppercase leading-none text-[#a6c4ff]">Étape</span>
+                <span class="mt-auto inline-flex items-center gap-[5px] pt-1 text-[11px] italic text-[#6b7280] opacity-70 transition-opacity duration-200 group-hover:opacity-100 group-aria-[pressed=true]:invisible">
+                  <svg class="opacity-60" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
                   Retourner
                 </span>
               </div>
               {/* VERSO */}
-              <div class="flipcard-face flipcard-back flipcard-back--etape">
-                <span class="flipcard-back-step-number">{card.step}</span>
-                <span class="flipcard-back-step-label">Étape</span>
-                <span class="flipcard-definition">{card.back}</span>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl border-[5px] border-[#a6c4ff] bg-white px-[18px] py-6 text-[#86aaf2] [backface-visibility:hidden] [transform:rotateY(180deg)] motion-reduce:[backface-visibility:visible] motion-reduce:[transform:none] motion-reduce:opacity-0 motion-reduce:transition-opacity motion-reduce:duration-300 group-aria-[pressed=true]:motion-reduce:opacity-100">
+                <span class="relative z-[1] text-[clamp(42px,4vw,58px)] font-extrabold leading-[0.9] text-[#a6c4ff]">{card.step}</span>
+                <span class="relative z-[1] -mt-0.5 text-[clamp(13px,1.4vw,18px)] font-extrabold uppercase text-[#a6c4ff]">Étape</span>
+                <span class="relative z-[1] mt-2 max-w-[90%] text-center text-sm leading-[1.6] text-[#46679f]">{card.back}</span>
               </div>
             </div>
           </button>
@@ -125,38 +122,56 @@ const stepCards = cards
 
   {/* ── Glossaire ── */}
   {glossaryCards.length > 0 && (
-    <div class="flipcard-section">
-      <h3 class="flipcard-section-title">
-        <span class="flipcard-section-icon flipcard-section-icon--glossaire">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </span>
+    <div class="mb-9">
+      <h3 class="mb-[18px] flex items-center gap-2 text-xl font-bold tracking-[-0.01em] text-[#101828]">
         Glossaire
       </h3>
-      <div class="flipcard-row">
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(190px,1fr))] gap-5">
         {glossaryCards.map((card) => (
           <button
             type="button"
-            class="flipcard flipcard--glossaire"
+            class="group block w-full cursor-pointer select-none appearance-none border-0 bg-transparent p-0 text-left [aspect-ratio:3/4] [font:inherit] [perspective:900px] [-webkit-tap-highlight-color:transparent] [filter:drop-shadow(0_4px_12px_rgba(16,24,40,0.08))] transition-[filter] duration-200 ease-in-out hover:[filter:drop-shadow(0_12px_28px_rgba(16,24,40,0.16))] focus-visible:rounded-2xl focus-visible:outline-[3px] focus-visible:outline-[#2F6FED] focus-visible:outline-offset-4"
             data-flipcard
             aria-pressed="false"
           >
-            <div class="flipcard-inner">
+            <div class="relative h-full w-full [transform-style:preserve-3d] [will-change:transform] [transition:transform_0.75s_linear(0,0.008_1.1%,0.031_2.2%,0.129_4.8%,0.257_7.2%,0.671_14.2%,0.789_16.5%,0.881_18.6%,0.957_20.7%,1.019_22.9%,1.063_25.1%,1.094_27.4%,1.114_30.7%,1.112_34.5%,1.018_49.9%,0.99_59.1%,1)] hover:scale-[1.04] hover:[transform:rotate3d(1,1,0,2deg)] aria-[pressed=true]:[transform:rotateY(180deg)] aria-[pressed=true]:hover:scale-[1.04] aria-[pressed=true]:hover:[transform:rotateY(180deg)_rotate3d(1,1,0,2deg)] motion-reduce:transform-none motion-reduce:transition-none">
               {/* RECTO */}
-              <div class="flipcard-face flipcard-front flipcard-front--glossaire">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".06"/></svg>
-                <span class="flipcard-badge flipcard-badge--glossaire"></span>
-                <span class="flipcard-term">{card.front}</span>
-                <span class="flipcard-hint">
-                  <svg class="flipcard-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              <div class="absolute inset-0 z-[2] flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl bg-white px-[18px] py-6 [backface-visibility:hidden]">
+                <svg
+                  class="absolute inset-0 z-0 h-full w-full rounded-[15px] pointer-events-none"
+                  viewBox="0 0 252 346"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <clipPath id={`glossary-card-clip-${card.front}`}>
+                      <rect width="252" height="346" rx="15" />
+                    </clipPath>
+                  </defs>
+                  <g clip-path={`url(#glossary-card-clip-${card.front})`}>
+                    <rect width="252" height="346" fill="#FFFFFF" />
+                    <path
+                      d="M49.4993 300C13.8993 318.4 3.33261 379 12.4993 390C97.4993 453 305.9 523.6 285.5 470C265.1 416.4 309.666 266 334.5 197.5C320.333 202 362.401 147.633 307.5 139.5C226.5 127.5 248.5 188.5 194 208.5C139.5 228.5 172 272 145 294.5C114 320.333 93.9993 277 49.4993 300Z"
+                      fill="#0BA5B7"
+                      fill-opacity="0.24"
+                    />
+                    <path
+                      d="M231.216 54.9724C266.816 36.5724 277.382 -24.0276 268.216 -35.0276C183.216 -98.0276 -25.1847 -168.628 -4.78467 -115.028C15.6153 -61.4276 -28.9513 88.9724 -53.7847 157.472C-39.618 152.972 -81.6859 207.339 -26.7852 215.472C54.2148 227.473 4 177.472 58.5 157.472C113 137.473 67.9688 76.7863 125 47.5C162 28.5 186.716 77.9724 231.216 54.9724Z"
+                      fill="#107AA5"
+                      fill-opacity="0.46"
+                    />
+                  </g>
+                </svg>
+                <span class="absolute left-1/2 top-1/2 z-[1] w-[calc(100%-32px)] -translate-x-1/2 -translate-y-1/2 text-center text-[25px] font-bold leading-[1.3] text-[#107aa5]">{card.front}</span>
+                <span class="mt-auto inline-flex items-center gap-[5px] pt-1 text-[11px] italic text-[#6b7280] opacity-70 transition-opacity duration-200 group-hover:opacity-100 group-aria-[pressed=true]:invisible">
+                  <svg class="opacity-60" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
                   Retourner
                 </span>
               </div>
               {/* VERSO */}
-              <div class="flipcard-face flipcard-back flipcard-back--glossaire">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-back-pattern-blue)" /><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".04"/></svg>
-                <span class="flipcard-badge flipcard-badge--glossaire">Glossaire</span>
-                <span class="flipcard-back-title">{card.front}</span>
-                <span class="flipcard-definition">{card.back}</span>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl border-[5px] border-[#107aa5] bg-white px-[18px] py-6 text-[#107aa5] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                <span class="text-center text-[15px] font-bold leading-[1.2] text-[#107aa5]">{card.front}</span>
+                <span class="text-center text-sm leading-[1.6] text-[#101828]">{card.back}</span>
               </div>
             </div>
           </button>
@@ -165,420 +180,6 @@ const stepCards = cards
     </div>
   )}
 </section>
-
-<style>
-  /* ───────────────────────────────────────────────
-     SVG defs – hidden but must remain in DOM
-     ─────────────────────────────────────────────── */
-  .flipcard-svg-defs {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  /* ───────────────────────────────────────────────
-     Wrapper
-     ─────────────────────────────────────────────── */
-  .flipcard-grid-wrapper {
-    position: relative;
-    width: 100%;
-    padding: 32px 0;
-    background: linear-gradient(180deg, #ffffff 0%, #eef4fb 100%);
-    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
-  }
-
-  .flipcard-noscript {
-    max-width: 700px;
-    margin: 0 auto 24px;
-    padding: 12px 16px;
-    background: #fef3c7;
-    border: 1px solid #f3e0b2;
-    border-radius: 8px;
-    color: #92400e;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  /* ───────────────────────────────────────────────
-     Sections
-     ─────────────────────────────────────────────── */
-  .flipcard-section {
-    margin-bottom: 36px;
-  }
-
-  .flipcard-section-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 0 18px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #101828;
-    letter-spacing: -0.01em;
-  }
-
-  .flipcard-section-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-  }
-
-  .flipcard-section-icon--glossaire {
-    background: #dbeafe;
-    color: #ffffff;
-  }
-
-  .flipcard-section-icon--etape {
-    background: #fef3c7;
-    color: #d97706;
-  }
-
-  /* ───────────────────────────────────────────────
-     Grilles
-     ─────────────────────────────────────────────── */
-  .flipcard-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 20px;
-  }
-
-  .flipcard-row--steps {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 252px));
-  }
-
-  /* ───────────────────────────────────────────────
-     Carte (bouton)
-     ─────────────────────────────────────────────── */
-  .flipcard {
-    /* Reset du bouton SANS casser le focus */
-    display: block;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-    text-align: left;
-    perspective: 900px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
-    /* drop-shadow instead of box-shadow for a more natural feel */
-    filter: drop-shadow(0 4px 12px rgba(16, 24, 40, 0.08));
-    transition: filter 0.25s ease;
-  }
-
-  .flipcard--etape {
-    aspect-ratio: 252 / 346;
-  }
-
-  .flipcard:hover {
-    filter: drop-shadow(0 12px 28px rgba(16, 24, 40, 0.16));
-  }
-
-  .flipcard:focus-visible {
-    outline: 3px solid #2F6FED;
-    outline-offset: 4px;
-    border-radius: 16px;
-  }
-
-  /* ───────────────────────────────────────────────
-     Conteneur interne (rotation)
-     ─────────────────────────────────────────────── */
-  .flipcard-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    will-change: transform;
-    /* Springy bounce timing function inspired by the CodePen playing card */
-    transition: transform 0.75s
-      linear(
-        0, 0.008 1.1%, 0.031 2.2%, 0.129 4.8%, 0.257 7.2%,
-        0.671 14.2%, 0.789 16.5%, 0.881 18.6%, 0.957 20.7%,
-        1.019 22.9%, 1.063 25.1%, 1.094 27.4%, 1.114 30.7%,
-        1.112 34.5%, 1.018 49.9%, 0.99 59.1%, 1
-      );
-  }
-
-  /* Hover lift — subtle 3D tilt + scale */
-  .flipcard:hover .flipcard-inner {
-    transform: scale(1.04) rotate3d(1, 1, 0, 2deg);
-  }
-
-  /* État retourné — piloté par JS via aria-pressed */
-  .flipcard[aria-pressed="true"] .flipcard-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flipcard[aria-pressed="true"]:hover .flipcard-inner {
-    transform: rotateY(180deg) scale(1.04) rotate3d(1, 1, 0, 2deg);
-  }
-
-  /* ── prefers-reduced-motion : fondu au lieu de rotation ── */
-  @media (prefers-reduced-motion: reduce) {
-    .flipcard-inner {
-      transition: none;
-      transform-style: flat;
-      will-change: auto;
-    }
-
-    .flipcard:hover .flipcard-inner {
-      transform: none;
-    }
-
-    .flipcard[aria-pressed="true"] .flipcard-inner {
-      transform: none;
-    }
-
-    .flipcard[aria-pressed="true"]:hover .flipcard-inner {
-      transform: none;
-    }
-
-    .flipcard-front {
-      transition: opacity 0.3s ease;
-    }
-
-    .flipcard-back {
-      transition: opacity 0.3s ease;
-    }
-
-    .flipcard[aria-pressed="true"] .flipcard-front {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .flipcard[aria-pressed="true"] .flipcard-back {
-      opacity: 1;
-    }
-
-    .flipcard-face {
-      backface-visibility: visible;
-    }
-
-    .flipcard-back {
-      opacity: 0;
-      position: absolute;
-      inset: 0;
-      transform: none;
-    }
-  }
-
-  /* ───────────────────────────────────────────────
-     Faces
-     ─────────────────────────────────────────────── */
-  .flipcard-face {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 18px;
-    border-radius: 16px;
-    backface-visibility: hidden;
-    overflow: hidden;
-    gap: 10px;
-  }
-
-  .flipcard-front {
-    z-index: 2;
-    background: #ffffff;
-  }
-
-  .flipcard-back {
-    transform: rotateY(180deg);
-    background: #ffffff;
-  }
-
-  /* SVG texture overlay (like the CodePen's card-texture) */
-  .flipcard-overlay-texture {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    mix-blend-mode: multiply;
-  }
-
-  /* Make sure all inner content sits above the texture */
-  .flipcard-badge,
-  .flipcard-term,
-  .flipcard-step-number,
-  .flipcard-definition,
-  .flipcard-hint {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── Bordures distinctives ── */
-  .flipcard-front--glossaire {
-    border: 2px solid #d1d8e7;
-    box-shadow:
-      inset 0 0 0 3px rgba(47, 111, 237, 0.06),
-      0 1px 3px rgba(16, 24, 40, 0.07);
-  }
-
-
-
-
-  .flipcard-front--etape {
-    border: 0;
-    background: #ffffff;
-    box-shadow: none;
-  }
-
-  .flipcard-back--etape {
-    border: 5px solid #a6c4ff;
-    background: #ffffff;
-    box-shadow: none;
-    color: #86aaf2;
-  }
-
-  /* ───────────────────────────────────────────────
-     Badges
-     ─────────────────────────────────────────────── */
-  .flipcard-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .flipcard-badge--etape {
-    background: #fef3c7;
-    color: #92400e;
-  }
-
-  /* ───────────────────────────────────────────────
-     Contenu texte
-     ─────────────────────────────────────────────── */
-  .flipcard-term {
-    font-size: 18px;
-    font-weight: 700;
-    color: #101828;
-    text-align: center;
-    line-height: 1.3;
-  }
-
-  .flipcard-back-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #2F6FED;
-    text-align: center;
-    line-height: 1.2;
-    margin-top: 2px;
-  }
-
-  .flipcard-step-number {
-    position: absolute;
-    z-index: 1;
-    top: 32%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: clamp(48px, 5vw, 70px);
-    font-weight: 800;
-    color: #a6c4ff;
-    line-height: 1;
-  }
-
-  .flipcard-step-label {
-    position: absolute;
-    z-index: 1;
-    top: 51%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #a6c4ff;
-    font-size: clamp(15px, 1.7vw, 22px);
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .flipcard-step-illustration {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-radius: 15px;
-  }
-
-  .flipcard-back-step-number,
-  .flipcard-back-step-label {
-    position: relative;
-    z-index: 1;
-    color: #a6c4ff;
-  }
-
-  .flipcard-back-step-number {
-    font-size: clamp(42px, 4vw, 58px);
-    font-weight: 800;
-    line-height: 0.9;
-  }
-
-  .flipcard-back-step-label {
-    margin-top: -2px;
-    font-size: clamp(13px, 1.4vw, 18px);
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  .flipcard-back--etape .flipcard-definition {
-    position: relative;
-    z-index: 1;
-    max-width: 90%;
-    margin-top: 8px;
-    color: #46679f;
-  }
-
-  .flipcard-definition {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #101828;
-    text-align: center;
-  }
-
-  .flipcard-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11px;
-    color: #6b7280;
-    font-style: italic;
-    margin-top: auto;
-    padding-top: 4px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-  }
-
-  .flipcard:hover .flipcard-hint {
-    opacity: 1;
-  }
-
-  .flipcard-hint-icon {
-    opacity: 0.6;
-  }
-
-  /* Hide hint once flipped */
-  .flipcard[aria-pressed="true"] .flipcard-hint {
-    visibility: hidden;
-  }
-</style>
 
 <script>
   // Interactivité des cartes — retournement au clic / clavier
@@ -592,7 +193,13 @@ const stepCards = cards
 
       function toggle() {
         const isFlipped = card.getAttribute("aria-pressed") === "true";
-        card.setAttribute("aria-pressed", String(!isFlipped));
+        const inner = card.firstElementChild as HTMLElement | null;
+        const nextIsFlipped = !isFlipped;
+
+        card.setAttribute("aria-pressed", String(nextIsFlipped));
+        if (inner) {
+          inner.style.transform = nextIsFlipped ? "rotateY(180deg)" : "";
+        }
       }
 
       card.addEventListener("click", toggle);
