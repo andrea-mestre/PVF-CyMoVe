@@ -71,13 +71,13 @@ import BMWLogo from "../assets/image16.svg";
 
 <Layout>
 	<div
-		class="w-full min-h-screen bg-[#effbfe] text-[#071a27] font-sans antialiased"
+		class="w-full min-h-screen mr-20 ml-17 bg-[#effbfe] text-[#071a27] font-sans antialiased"
 	>
 		<main
-			class="max-w-280 mx-auto pt-[54px] pr-[92px] pb-[160px] pl-[30px] [@media(max-width:768px)]:p-4 [@media(max-width:768px)]:pb-[90px]"
+			class="w-full max-w-[100%] pt-[54px] pr-[0px] pb-[160px] pl-[0px] [@media(max-width:800px)]:p-4 [@media(max-width:800px)]:pb-[80px] flex flex-col items-stretch justify-center"
 		>
 			<!-- HERO / INTRODUCTION -->
-			<section class="max-w-[970px] scroll-mt-7" id="introduction">
+			<section class="scroll-mt-7" id="introduction">
 				<div
 					class="mb-[7px] text-[#079bcf] text-[12px] font-bold tracking-[0.14em] uppercase"
 				>
@@ -88,9 +88,7 @@ import BMWLogo from "../assets/image16.svg";
 				>
 					Introduction
 				</h1>
-				<p
-					class="max-w-[900px] text-[#39505b] text-[20px] leading-[1.68] m-0"
-				>
+				<p class="text-[#39505b] text-[20px] leading-[1.68] m-0">
 					Les enjeux de la cybersécurité sont aujourd’hui partout :
 					dans nos usages, nos outils et les services que nous
 					utilisons chaque jour. Ce parcours propose une lecture
@@ -100,7 +98,7 @@ import BMWLogo from "../assets/image16.svg";
 				</p>
 
 				<figure
-					class="w-full max-w-[915px] my-[28px] mx-0 mb-[100px] py-[28px] px-[33px] pb-[16px] rounded-[14px] bg-[rgba(255,255,255,0.84)] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
+					class="w-full my-[28px] mx-0 mb-[100px] py-[28px] px-[33px] pb-[16px] rounded-[14px] bg-[rgba(255,255,255,0.84)] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
 				>
 					<div
 						class="overflow-hidden aspect-[16/8.5] bg-[#061521] border-[8px] border-[#09121a] shadow-[0_4px_0_rgba(2,13,21,0.35)]"
@@ -123,7 +121,7 @@ import BMWLogo from "../assets/image16.svg";
 			</section>
 
 			<!-- CAS 1 -->
-			<section class="max-w-247.5 mb-29 scroll-mt-7" id="cas-1">
+			<section class="mb-29 scroll-mt-7" id="cas-1">
 				<div class="flex mb-2 gap-7 align-items-bottom flex-column">
 					<h2
 						class="m-0 text-[#081924] text-[clamp(25px,3vw,44px)] leading-[1.1] tracking-[-0.052em] font-bold"
@@ -140,7 +138,7 @@ import BMWLogo from "../assets/image16.svg";
 				</div>
 
 				<p
-					class="max-w-[900px] mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
+					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					Dans ce premier cas, nous allons observer comment un service
 					connecté peut exposer des informations sensibles. En
@@ -308,7 +306,7 @@ import BMWLogo from "../assets/image16.svg";
 			</section>
 
 			<!-- CAS 2 -->
-			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-2">
+			<section class="mb-[116px] scroll-mt-7" id="cas-2">
 				<div class="flex mb-2 gap-7 flex-column">
 					<h2
 						class="m-0 text-[#081924] text-[clamp(25px,3vw,44px)] leading-[1.1] tracking-[-0.052em] font-bold"
@@ -324,7 +322,7 @@ import BMWLogo from "../assets/image16.svg";
 					</p>
 				</div>
 				<p
-					class="max-w-[900px] mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
+					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					Deux chercheurs en sécurité ont découvert une faille dans le
 					service connecté d’un constructeur automobile. Cette
@@ -341,7 +339,7 @@ import BMWLogo from "../assets/image16.svg";
 
 				<!-- BLOCS MÉTRIQUES CAS 2 -->
 				<div
-					class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[960px] mx-auto mt-10"
+					class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto mt-10"
 				>
 					<div
 						class="min-h-[150px] flex flex-col items-center justify-center p-6 rounded-[20px] bg-white border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)] text-center transition-transform"
@@ -402,7 +400,7 @@ import BMWLogo from "../assets/image16.svg";
 			</section>
 
 			<!-- CAS 3 -->
-			<section class="max-w-[990px] mb-[130px] scroll-mt-7" id="cas-3">
+			<section class="mb-[130px] scroll-mt-7" id="cas-3">
 				<div class="flex mb-2 gap-7 flex-column">
 					<h2
 						class="m-0 text-[#081924] text-[clamp(25px,3vw,44px)] leading-[1.1] tracking-[-0.052em] font-bold"
@@ -418,7 +416,7 @@ import BMWLogo from "../assets/image16.svg";
 					</p>
 				</div>
 				<p
-					class="max-w-[900px] mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
+					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					En 2018, des chercheurs belges ont mis en évidence une
 					faiblesse permettant de cloner une clé de véhicule.
@@ -435,7 +433,7 @@ import BMWLogo from "../assets/image16.svg";
 			</section>
 
 			<!-- CAS 4 -->
-			<section class="max-w-[990px] mb-[116px] scroll-mt-7" id="cas-4">
+			<section class="mb-[116px] scroll-mt-7" id="cas-4">
 				<div class="flex mb-2 gap-7 flex-column">
 					<h2
 						class="m-0 text-[#081924] text-[clamp(25px,3vw,44px)] leading-[1.1] tracking-[-0.052em] font-bold"
@@ -451,7 +449,7 @@ import BMWLogo from "../assets/image16.svg";
 					</p>
 				</div>
 				<p
-					class="max-w-[900px] mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
+					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					En 2023, un vol de véhicule a mis en lumière une méthode
 					inédite : l’injection de messages sur le réseau CAN via le
@@ -610,5 +608,4 @@ import BMWLogo from "../assets/image16.svg";
 			observer.observe(el);
 		}
 	});
-
 </script>
