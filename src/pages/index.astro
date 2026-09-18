@@ -1,6 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AttackDiagram from "../components/AttackDiagram.astro";
+import FlipCardGrid from "../components/FlipCardGrid.astro";
+import type { FlipCard } from "../components/FlipCardGrid.astro";
+
+const toyotaCards: FlipCard[] = [
+	{
+		type: "glossaire",
+		front: "Bus CAN",
+		back: "Le réseau électronique interne qui relie les composants d'une voiture entre eux (moteur, phares, portières...) et leur permet de communiquer.",
+	},
+	{
+		type: "glossaire",
+		front: "Injection (CAN injection)",
+		back: "Le fait d'envoyer un faux message sur ce réseau pour faire croire aux autres composants qu'il est légitime.",
+	},
+	{
+		type: "glossaire",
+		front: "Immobiliseur",
+		back: "Le système qui empêche normalement le moteur de démarrer sans la vraie clé.",
+	},
+	{
+		type: "glossaire",
+		front: "Authentification",
+		back: "La vérification qu'un message provient bien de l'expéditeur qu'il prétend être — absente sur le bus CAN classique, ce qui rend l'injection possible.",
+	},
+	{
+		type: "etape",
+		step: 1,
+		front: "Étape 1",
+		back: "Le voleur débranche le câblage derrière le phare pour atteindre le bus CAN.",
+	},
+	{
+		type: "etape",
+		step: 2,
+		front: "Étape 2",
+		back: "Un petit boîtier, parfois déguisé en enceinte Bluetooth, est branché sur ce connecteur.",
+	},
+	{
+		type: "etape",
+		step: 3,
+		front: "Étape 3",
+		back: "L'appareil envoie un faux message qui imite celui d'une clé légitime.",
+	},
+	{
+		type: "etape",
+		step: 4,
+		front: "Étape 4",
+		back: "L'immobiliseur accepte le message et désactive la protection du véhicule.",
+	},
+	{
+		type: "etape",
+		step: 5,
+		front: "Étape 5",
+		back: "Le moteur démarre, sans qu'aucune vraie clé n'ait été utilisée.",
+	},
+];
 import NuageMots from "../components/NuageMots.astro";
 import Starlink from "../components/Starlink.astro";
 import Quiz from "../components/Quiz.astro";
@@ -408,26 +463,7 @@ import BMWLogo from "../assets/image16.svg";
 					Observez les différentes étapes de l’attaque ci-dessous.
 				</p>
 
-				<div
-					class="grid grid-cols-4 gap-4 mt-8 [@media(max-width:768px)]:grid-cols-2"
-				>
-					<div
-						class="min-h-35 rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
-					>
-					</div>
-					<div
-						class="min-h-35 rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
-					>
-					</div>
-					<div
-						class="min-h-35 rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
-					>
-					</div>
-					<div
-						class="min-h-35 rounded-[10px] bg-[#dce7ee] border border-[rgba(157,210,225,0.6)] shadow-[0_17px_32px_rgba(79,156,178,0.12),0_2px_7px_rgba(62,123,141,0.08)]"
-					>
-					</div>
-				</div>
+				<FlipCardGrid cards={toyotaCards} />
 			</section>
 
 			<!-- SYNTHÈSE -->
@@ -575,5 +611,4 @@ import BMWLogo from "../assets/image16.svg";
 		}
 	});
 
-	
 </script>
