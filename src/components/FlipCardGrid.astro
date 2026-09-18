@@ -1,12 +1,4 @@
 ---
-/**
- * FlipCardGrid.astro
- * Jeu de cartes à retourner — glossaire + étapes d'attaque.
- * Réutilisable pour n'importe quel cas (Subaru, Tesla, BMW, Toyota…).
- *
- * Props :
- *   cards — tableau de cartes (glossaire ou étape) à afficher.
- */
 
 interface GlossaryCard {
   type: "glossaire";
@@ -67,47 +59,6 @@ const stepCards = cards
     </defs>
   </svg>
 
-  {/* ── Glossaire ── */}
-  {glossaryCards.length > 0 && (
-    <div class="flipcard-section">
-      <h3 class="flipcard-section-title">
-        <span class="flipcard-section-icon flipcard-section-icon--glossaire">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </span>
-        Glossaire
-      </h3>
-      <div class="flipcard-row">
-        {glossaryCards.map((card) => (
-          <button
-            type="button"
-            class="flipcard flipcard--glossaire"
-            data-flipcard
-            aria-pressed="false"
-          >
-            <div class="flipcard-inner">
-              {/* RECTO */}
-              <div class="flipcard-face flipcard-front flipcard-front--glossaire">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".06"/></svg>
-                <span class="flipcard-badge flipcard-badge--glossaire">Glossaire</span>
-                <span class="flipcard-term">{card.front}</span>
-                <span class="flipcard-hint">
-                  <svg class="flipcard-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                  Retourner
-                </span>
-              </div>
-              {/* VERSO */}
-              <div class="flipcard-face flipcard-back flipcard-back--glossaire">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-back-pattern-blue)" /><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".04"/></svg>
-                <span class="flipcard-badge flipcard-badge--glossaire">Glossaire</span>
-                <span class="flipcard-definition">{card.back}</span>
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
-    </div>
-  )}
-
   {/* ── Étapes ── */}
   {stepCards.length > 0 && (
     <div class="flipcard-section">
@@ -148,6 +99,48 @@ const stepCards = cards
       </div>
     </div>
   )}
+
+  {/* ── Glossaire ── */}
+  {glossaryCards.length > 0 && (
+    <div class="flipcard-section">
+      <h3 class="flipcard-section-title">
+        <span class="flipcard-section-icon flipcard-section-icon--glossaire">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </span>
+        Glossaire
+      </h3>
+      <div class="flipcard-row">
+        {glossaryCards.map((card) => (
+          <button
+            type="button"
+            class="flipcard flipcard--glossaire"
+            data-flipcard
+            aria-pressed="false"
+          >
+            <div class="flipcard-inner">
+              {/* RECTO */}
+              <div class="flipcard-face flipcard-front flipcard-front--glossaire">
+                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".06"/></svg>
+                <span class="flipcard-badge flipcard-badge--glossaire"></span>
+                <span class="flipcard-term">{card.front}</span>
+                <span class="flipcard-hint">
+                  <svg class="flipcard-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                  Retourner
+                </span>
+              </div>
+              {/* VERSO */}
+              <div class="flipcard-face flipcard-back flipcard-back--glossaire">
+                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-back-pattern-blue)" /><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".04"/></svg>
+                <span class="flipcard-badge flipcard-badge--glossaire">Glossaire</span>
+                <span class="flipcard-back-title">{card.front}</span>
+                <span class="flipcard-definition">{card.back}</span>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
 </section>
 
 <style>
@@ -178,7 +171,7 @@ const stepCards = cards
     margin: 0 auto 24px;
     padding: 12px 16px;
     background: #fef3c7;
-    border: 1px solid #fbbf24;
+    border: 1px solid #f3e0b2;
     border-radius: 8px;
     color: #92400e;
     font-size: 14px;
@@ -402,19 +395,14 @@ const stepCards = cards
 
   /* ── Bordures distinctives ── */
   .flipcard-front--glossaire {
-    border: 2px solid #2F6FED;
+    border: 2px solid #d1d8e7;
     box-shadow:
       inset 0 0 0 3px rgba(47, 111, 237, 0.06),
       0 1px 3px rgba(16, 24, 40, 0.07);
   }
 
-  .flipcard-back--glossaire {
-    border: 2px solid #2F6FED;
-    background: #f0f5ff;
-    box-shadow:
-      inset 0 0 0 3px rgba(47, 111, 237, 0.06),
-      0 1px 3px rgba(16, 24, 40, 0.07);
-  }
+
+
 
   .flipcard-front--etape {
     border: 2px solid #f59e0b;
@@ -444,11 +432,6 @@ const stepCards = cards
     text-transform: uppercase;
   }
 
-  .flipcard-badge--glossaire {
-    background: #dbeafe;
-    color: #1e40af;
-  }
-
   .flipcard-badge--etape {
     background: #fef3c7;
     color: #92400e;
@@ -463,6 +446,15 @@ const stepCards = cards
     color: #101828;
     text-align: center;
     line-height: 1.3;
+  }
+
+  .flipcard-back-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2F6FED;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 2px;
   }
 
   .flipcard-step-number {
