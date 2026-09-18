@@ -1,0 +1,54 @@
+---
+
+---
+
+<div class="max-w-xl mx-auto p-6">
+    <textarea
+        id="input"
+        class="w-full h-40 p-4 border rounded-lg"
+        placeholder="Tapez ou collez votre texte..."></textarea>
+
+    <button
+        id="generate"
+        class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg"
+    >
+        Générer
+    </button>
+
+    <canvas
+        id="cloud"
+        width="800"
+        height="500"
+        class="mt-6 w-full border rounded-lg"></canvas>
+</div>
+
+<script>
+    import WordCloud from "wordcloud";
+
+    const button = document.getElementById("generate");
+    const input = document.getElementById("input");
+    const canvas = document.getElementById("cloud");
+
+    button.addEventListener("click", () => {
+        const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+
+        const counts = {};
+
+        words.forEach((word) => {
+            counts[word] = (counts[word] || 0) + 1;
+        });
+
+        const list = Object.entries(counts);
+
+        WordCloud(canvas, {
+            list,
+            gridSize: 12,
+            weightFactor: 20,
+            backgroundColor: "#ffffff",
+            color: () =>
+                ["#13293D", "#D6A2AD", "#E8DCC2"][
+                    Math.floor(Math.random() * 3)
+                ],
+        });
+    });
+</script>
