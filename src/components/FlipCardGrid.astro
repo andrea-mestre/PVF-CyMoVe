@@ -79,9 +79,32 @@ const stepCards = cards
             <div class="flipcard-inner">
               {/* RECTO */}
               <div class="flipcard-face flipcard-front flipcard-front--etape">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".06"/></svg>
-                <span class="flipcard-badge flipcard-badge--etape">Étape {card.step}</span>
+                <svg
+                  class="flipcard-step-illustration"
+                  viewBox="0 0 252 346"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <clipPath id={`step-card-clip-${card.step}`}>
+                      <rect width="252" height="346" rx="15" />
+                    </clipPath>
+                  </defs>
+                  <g clip-path={`url(#step-card-clip-${card.step})`}>
+                    <rect width="252" height="346" fill="#FFFFFF" />
+                  <path
+                    d="M49.4993 300C13.8993 318.4 3.33261 379 12.4993 390C97.4993 453 305.9 523.6 285.5 470C265.1 416.4 309.666 266 334.5 197.5C320.333 202 362.401 147.633 307.5 139.5C226.5 127.5 248.5 188.5 194 208.5C139.5 228.5 172 272 145 294.5C114 320.333 93.9993 277 49.4993 300Z"
+                    fill="#A6C4FF"
+                    fill-opacity="0.41"
+                  />
+                  <path
+                    d="M231.216 54.9724C266.816 36.5724 277.382 -24.0276 268.216 -35.0276C183.216 -98.0276 -25.1847 -168.628 -4.78467 -115.028C15.6153 -61.4276 -28.9513 88.9724 -53.7847 157.472C-39.618 152.972 -81.6859 207.339 -26.7852 215.472C54.2148 227.473 4 177.472 58.5 157.472C113 137.473 67.9688 76.7863 125 47.5C162 28.5 186.716 77.9724 231.216 54.9724Z"
+                    fill="#A6C4FF"
+                  />
+                  </g>
+                </svg>
                 <span class="flipcard-step-number">{card.step}</span>
+                <span class="flipcard-step-label">Étape</span>
                 <span class="flipcard-hint">
                   <svg class="flipcard-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
                   Retourner
@@ -89,8 +112,8 @@ const stepCards = cards
               </div>
               {/* VERSO */}
               <div class="flipcard-face flipcard-back flipcard-back--etape">
-                <svg class="flipcard-overlay-texture" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#flipcard-back-pattern-amber)" /><rect width="100%" height="100%" fill="url(#flipcard-texture)" opacity=".04"/></svg>
-                <span class="flipcard-badge flipcard-badge--etape">Étape {card.step}</span>
+                <span class="flipcard-back-step-number">{card.step}</span>
+                <span class="flipcard-back-step-label">Étape</span>
                 <span class="flipcard-definition">{card.back}</span>
               </div>
             </div>
@@ -207,7 +230,7 @@ const stepCards = cards
 
   .flipcard-section-icon--glossaire {
     background: #dbeafe;
-    color: #2F6FED;
+    color: #ffffff;
   }
 
   .flipcard-section-icon--etape {
@@ -225,7 +248,7 @@ const stepCards = cards
   }
 
   .flipcard-row--steps {
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 252px));
   }
 
   /* ───────────────────────────────────────────────
@@ -251,6 +274,10 @@ const stepCards = cards
     /* drop-shadow instead of box-shadow for a more natural feel */
     filter: drop-shadow(0 4px 12px rgba(16, 24, 40, 0.08));
     transition: filter 0.25s ease;
+  }
+
+  .flipcard--etape {
+    aspect-ratio: 252 / 346;
   }
 
   .flipcard:hover {
@@ -405,18 +432,16 @@ const stepCards = cards
 
 
   .flipcard-front--etape {
-    border: 2px solid #f59e0b;
-    box-shadow:
-      inset 0 0 0 3px rgba(245, 158, 11, 0.06),
-      0 1px 3px rgba(16, 24, 40, 0.07);
+    border: 0;
+    background: #ffffff;
+    box-shadow: none;
   }
 
   .flipcard-back--etape {
-    border: 2px solid #f59e0b;
-    background: #fffbeb;
-    box-shadow:
-      inset 0 0 0 3px rgba(245, 158, 11, 0.06),
-      0 1px 3px rgba(16, 24, 40, 0.07);
+    border: 5px solid #a6c4ff;
+    background: #ffffff;
+    box-shadow: none;
+    color: #86aaf2;
   }
 
   /* ───────────────────────────────────────────────
@@ -458,11 +483,67 @@ const stepCards = cards
   }
 
   .flipcard-step-number {
-    font-size: 52px;
+    position: absolute;
+    z-index: 1;
+    top: 32%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(48px, 5vw, 70px);
     font-weight: 800;
-    color: #f59e0b;
+    color: #a6c4ff;
     line-height: 1;
-    text-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+  }
+
+  .flipcard-step-label {
+    position: absolute;
+    z-index: 1;
+    top: 51%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #a6c4ff;
+    font-size: clamp(15px, 1.7vw, 22px);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .flipcard-step-illustration {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 15px;
+  }
+
+  .flipcard-back-step-number,
+  .flipcard-back-step-label {
+    position: relative;
+    z-index: 1;
+    color: #a6c4ff;
+  }
+
+  .flipcard-back-step-number {
+    font-size: clamp(42px, 4vw, 58px);
+    font-weight: 800;
+    line-height: 0.9;
+  }
+
+  .flipcard-back-step-label {
+    margin-top: -2px;
+    font-size: clamp(13px, 1.4vw, 18px);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .flipcard-back--etape .flipcard-definition {
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+    margin-top: 8px;
+    color: #46679f;
   }
 
   .flipcard-definition {
