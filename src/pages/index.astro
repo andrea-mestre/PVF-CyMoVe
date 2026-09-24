@@ -211,8 +211,51 @@ import BMWLogo from "../assets/image16.svg";
 				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
 					Répondez aux questions ci-dessous pour en découvrir plus.
 				</p>
-
-				<Quiz />
+				<div
+					class="flex flex-auto gap-5 align-middle justify-center display-block items-start"
+				>
+					<div class="w-100% max-w-[600px]">
+						<iframe
+							width="600"
+							height="315"
+							src="https://www.youtube.com/embed/aVlYuPzmJoY?si=MTOEZBbc3XTQcldI"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						>
+						</iframe>
+						<p
+							class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] mt-7 max-w-[560px]"
+						>
+						<ul>
+							<li>
+								Derrière cette attaque se cachent des chercheurs
+								belges qui ont exploité un chiffrement sans
+								contact obsolète (seulement 40 bits). L'aspect
+								le plus marquant réside dans l'accessibilité de
+								la méthode : le matériel nécessaire coûte
+								environ 600 dollars et l'opération ne prend que
+								quelques secondes à proximité de la cible.
+							</li>
+							<br />
+							<li>
+								Cet événement démontre qu'une grande marque
+								technologique peut être vulnérable à cause d'un
+								composant tiers défaillant. Pour contrer ce
+								risque, Tesla a corrigé le problème via des
+								mises à jour logicielles à distance et a
+								instauré l'option « PIN to Drive », exigeant un
+								code secret sur l'écran pour démarrer le
+								véhicule.
+							</li>
+						</ul>
+							
+						</p>
+					</div>
+					<Quiz />
+				</div>
 
 				<div
 					class="mt-10 border-l-4 border-[#08a1d4] bg-white px-6 py-5 shadow-[0_10px_25px_rgba(11,40,80,0.05)] rounded-2xl"
@@ -225,10 +268,13 @@ import BMWLogo from "../assets/image16.svg";
 					<p
 						class="mt-3 mb-0 text-[#46606b] text-[17px] leading-[1.6]"
 					>
-						Aujourd'hui, même nos clés et nos smartphones
-						communiquent avec le véhicule. Avec autant d'accès
-						différents, un hacker a l'embarras du choix pour tenter
-						de le pirater.
+						Cette attaque s'appuie sur un matériel accessible pour
+						environ 600 dollars exploitant une clé de chiffrement
+						obsolète de 40 bits. Pour contrer ce type de
+						vulnérabilité et empêcher le vol malgré le clonage,
+						l'activation de l'option de sécurité « PIN to Drive »
+						(exigeant la saisie d'un code secret sur l'écran de
+						bord) s'avère indispensable.
 					</p>
 				</div>
 			</section>
