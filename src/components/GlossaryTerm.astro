@@ -34,9 +34,46 @@ const tooltipId = `glossary-${term.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
                 button.addEventListener("click", () => {
                     const isExpanded =
                         button.getAttribute("aria-expanded") === "true";
-                    button.setAttribute("aria-expanded", String(!isExpanded));
+                    const nextIsExpanded = !isExpanded;
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        String(nextIsExpanded),
+                    );
+
+                    if (!nextIsExpanded) {
+                        button.blur();
+                    }
                 });
             });
+
+        document.addEventListener("click", (event) => {
+            const target = event.target as Node;
+
+            document
+                .querySelectorAll<HTMLButtonElement>(
+                    "[data-glossary-button][aria-expanded='true']",
+                )
+                .forEach((button) => {
+                    if (!button.closest(".glossary-term")?.contains(target)) {
+                        button.setAttribute("aria-expanded", "false");
+                        button.blur();
+                    }
+                });
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape") return;
+
+            document
+                .querySelectorAll<HTMLButtonElement>(
+                    "[data-glossary-button][aria-expanded='true']",
+                )
+                .forEach((button) => {
+                    button.setAttribute("aria-expanded", "false");
+                    button.blur();
+                });
+        });
     }
 
     if (document.readyState === "loading") {
@@ -57,7 +94,7 @@ const tooltipId = `glossary-${term.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
     .glossary-term__button {
         appearance: none;
         border: 0;
-        border-bottom: 2px dotted #0879ae;
+        text-decoration: underline;
         background: transparent;
         color: #0879ae;
         cursor: help;
