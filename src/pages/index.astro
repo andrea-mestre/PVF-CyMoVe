@@ -2,59 +2,52 @@
 import Layout from "../layouts/Layout.astro";
 import AttackDiagram from "../components/AttackDiagram.astro";
 import FlipCardGrid from "../components/FlipCardGrid.astro";
+import GlossaryCards from "../components/GlossaryCards.astro";
 import GlossaryTerm from "../components/GlossaryTerm.astro";
-import type { FlipCard } from "../components/FlipCardGrid.astro";
 
-const toyotaCards: FlipCard[] = [
+const toyotaSteps = [
 	{
-		type: "glossaire",
-		front: "Bus CAN",
-		back: "Le réseau électronique interne qui relie les composants d'une voiture entre eux (moteur, phares, portières...) et leur permet de communiquer.",
-	},
-	{
-		type: "glossaire",
-		front: "Injection (CAN injection)",
-		back: "Le fait d'envoyer un faux message sur ce réseau pour faire croire aux autres composants qu'il est légitime.",
-	},
-	{
-		type: "glossaire",
-		front: "Immobiliseur",
-		back: "Le système qui empêche normalement le moteur de démarrer sans la vraie clé.",
-	},
-	{
-		type: "glossaire",
-		front: "Authentification",
-		back: "La vérification qu'un message provient bien de l'expéditeur qu'il prétend être — absente sur le bus CAN classique, ce qui rend l'injection possible.",
-	},
-	{
-		type: "etape",
 		step: 1,
-		front: "Étape 1",
-		back: "Le voleur débranche le câblage derrière le phare pour atteindre le bus CAN.",
+		text: "Le voleur débranche le câblage derrière le phare pour atteindre le bus CAN.",
 	},
 	{
-		type: "etape",
 		step: 2,
-		front: "Étape 2",
-		back: "Un petit boîtier, parfois déguisé en enceinte Bluetooth, est branché sur ce connecteur.",
+		text: "Un petit boîtier, parfois déguisé en enceinte Bluetooth, est branché sur ce connecteur.",
 	},
 	{
-		type: "etape",
 		step: 3,
-		front: "Étape 3",
-		back: "L'appareil envoie un faux message qui imite celui d'une clé légitime.",
+		text: "L'appareil envoie un faux message qui imite celui d'une clé légitime.",
 	},
 	{
-		type: "etape",
 		step: 4,
-		front: "Étape 4",
-		back: "L'immobiliseur accepte le message et désactive la protection du véhicule.",
+		text: "L'immobiliseur accepte le message et désactive la protection du véhicule.",
 	},
 	{
-		type: "etape",
 		step: 5,
-		front: "Étape 5",
-		back: "Le moteur démarre, sans qu'aucune vraie clé n'ait été utilisée.",
+		text: "Le moteur démarre, sans qu'aucune vraie clé n'ait été utilisée.",
+	},
+];
+
+const toyotaGlossary = [
+	{
+		term: "Bus CAN",
+		definition:
+			"Le réseau électronique interne qui relie les composants d'une voiture entre eux (moteur, phares, portières...) et leur permet de communiquer.",
+	},
+	{
+		term: "Injection (CAN injection)",
+		definition:
+			"Le fait d'envoyer un faux message sur ce réseau pour faire croire aux autres composants qu'il est légitime.",
+	},
+	{
+		term: "Immobiliseur",
+		definition:
+			"Le système qui empêche normalement le moteur de démarrer sans la vraie clé.",
+	},
+	{
+		term: "Authentification",
+		definition:
+			"La vérification qu'un message provient bien de l'expéditeur qu'il prétend être — absente sur le bus CAN classique, ce qui rend l'injection possible.",
 	},
 ];
 import NuageMots from "../components/NuageMots.astro";
@@ -157,11 +150,9 @@ import BMWLogo from "../assets/image16.svg";
 						definition="Le système qui empêche le moteur de démarrer sans la bonne clé."
 					/> et de déverrouiller les portes sans la clé.
 				</p>
-				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
-					Observez les différentes étapes de l’attaque ci-dessous.
-				</p>
+				<FlipCardGrid steps={toyotaSteps} />
 
-				<FlipCardGrid cards={toyotaCards} />
+				<GlossaryCards terms={toyotaGlossary} />
 
 				<div
 					class="mt-0 border-l-4 border-[#08a1d4] bg-white px-6 py-5 shadow-[0_10px_25px_rgba(11,40,80,0.05)] rounded-2xl"
