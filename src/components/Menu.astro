@@ -9,7 +9,6 @@ const navItems = [
 ];
 
 import CymoveLogo from "../assets/cymove2.svg";
-import PoleVehiculeLogo from "../assets/pôlevéhiculedufutur.svg";
 ---
 
 <div class="menu" data-collapsed="false">
@@ -28,13 +27,6 @@ import PoleVehiculeLogo from "../assets/pôlevéhiculedufutur.svg";
                 src={CymoveLogo.src}
                 alt="Logo CyMove"
                 width="60%"
-                height="auto"
-                loading="eager"
-            />
-            <img
-                src={PoleVehiculeLogo.src}
-                alt="Logo Pôle Véhicule du Futur"
-                width="75%"
                 height="auto"
                 loading="eager"
             />
@@ -305,12 +297,25 @@ import PoleVehiculeLogo from "../assets/pôlevéhiculedufutur.svg";
     .brand-logos {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        margin-bottom: 20px;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 50px;
         overflow: hidden;
         opacity: 1;
         max-width: 100%;
         transition: opacity var(--menu-transition), max-width var(--menu-transition), margin var(--menu-transition);
+    }
+
+    .brand-logos img {
+        display: block;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .brand-logos img:first-child {
+        width: 130px;
+        max-width: 100%;
     }
 
     .brand-text {
@@ -436,6 +441,10 @@ import PoleVehiculeLogo from "../assets/pôlevéhiculedufutur.svg";
     .menu[data-collapsed="true"] .sidebar {
         padding-left: 36px;
         padding-right: 20px;
+    }
+
+    .menu[data-collapsed="true"] .collapse-button {
+        right: 20px;
     }
 
     .menu[data-collapsed="true"] .brand-logos,
