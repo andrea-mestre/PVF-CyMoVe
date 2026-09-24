@@ -41,11 +41,11 @@ const glossaryItems: GlossaryItem[] = terms ?? (
    
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+  <div class="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-4">
     {glossaryItems.map((item, idx) => (
       <button
         type="button"
-        class="group block w-full cursor-pointer select-none appearance-none border-0 bg-transparent p-0 text-left [aspect-ratio:3/4] [font:inherit] [perspective:900px] [-webkit-tap-highlight-color:transparent] [filter:drop-shadow(0_4px_12px_rgba(16,24,40,0.08))] transition-[filter] duration-200 ease-in-out hover:[filter:drop-shadow(0_12px_28px_rgba(16,24,40,0.16))] focus-visible:rounded-2xl focus-visible:outline-[3px] focus-visible:outline-[#107AA5] focus-visible:outline-offset-4"
+        class="group block w-full max-w-[280px] cursor-pointer select-none appearance-none border-0 bg-transparent p-0 text-left [aspect-ratio:3/4] [font:inherit] [perspective:900px] [-webkit-tap-highlight-color:transparent] [filter:drop-shadow(0_4px_12px_rgba(16,24,40,0.08))] transition-[filter] duration-200 ease-in-out hover:[filter:drop-shadow(0_12px_28px_rgba(16,24,40,0.16))] focus-visible:rounded-2xl focus-visible:outline-[3px] focus-visible:outline-[#107AA5] focus-visible:outline-offset-4"
         data-glossary-card
         aria-pressed="false"
         aria-label={`Carte glossaire : ${item.term}. Cliquez pour afficher la définition.`}

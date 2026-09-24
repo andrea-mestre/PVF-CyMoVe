@@ -73,16 +73,10 @@ const stepsJson = JSON.stringify(rawSteps);
     aria-atomic="true"
   ></div>
 
-  <!-- Instructions accessibilité clavier masquées visuellement -->
-  <p class="sr-only">
-    Exercice d'ordonnancement accessible : utilisez la touche Tab pour naviguer sur une carte, 
-    appuyez sur Entrée ou Espace pour la saisir, utilisez les flèches directionnelles pour choisir un emplacement de 1 à 5, 
-    puis Entrée pour la déposer ou Échap pour annuler.
-  </p>
 
   <!-- 1. ZONE DES 5 EMPLACEMENTS RÉCEPTEURS (SLOTS) -->
   <div 
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3.5 sm:gap-4 mb-6" 
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3.5 sm:gap-4 mb-4" 
     id="slots-container"
     role="region"
     aria-label="Emplacements chronologiques de 1 à 5"
