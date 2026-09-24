@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import AttackDiagram from "../components/AttackDiagram.astro";
 import FlipCardGrid from "../components/FlipCardGrid.astro";
+import GlossaryTerm from "../components/GlossaryTerm.astro";
 import type { FlipCard } from "../components/FlipCardGrid.astro";
 
 const toyotaCards: FlipCard[] = [
@@ -89,12 +90,14 @@ import BMWLogo from "../assets/image16.svg";
 						vraiment ?
 					</h1>
 					<p class="text-[#39505b] text-[20px] leading-[1.68] m-0">
-						Les enjeux de la cybersécurité sont aujourd’hui partout
-						: dans nos usages, nos outils et les services que nous
-						utilisons chaque jour. Ce parcours propose une lecture
-						simple et concrète de situations réelles pour mieux
-						reconnaître les risques, adopter les bons réflexes et
-						protéger les données qui comptent. <strong
+						Les enjeux de la <GlossaryTerm
+							term="cybersécurité"
+							definition="L'ensemble des méthodes pour protéger les appareils, les réseaux et les informations contre les attaques."
+						/> sont aujourd’hui partout : dans nos usages, nos outils
+						et les services que nous utilisons chaque jour. Ce parcours
+						propose une lecture simple et concrète de situations réelles
+						pour mieux reconnaître les risques, adopter les bons réflexes
+						et protéger les données qui comptent. <strong
 							>Plus un véhicule est connecté plus il est sensible
 							à l'hacking</strong
 						>
@@ -142,10 +145,17 @@ import BMWLogo from "../assets/image16.svg";
 					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					En 2023, un vol de véhicule a mis en lumière une méthode
-					inédite : l’injection de messages sur le réseau CAN via le
-					connecteur d’un phare. Cette attaque permet de contourner la
-					protection antidémarrage et de déverrouiller les portes sans
-					la clé.
+					inédite : l’<GlossaryTerm
+						term="injection"
+						definition="L'envoi d'un faux message dans un réseau pour tromper les autres appareils."
+					/> de messages sur le <GlossaryTerm
+						term="réseau CAN"
+						definition="Le réseau électronique qui permet aux équipements d'une voiture de communiquer entre eux."
+					/> via le connecteur d’un phare. Cette attaque permet de contourner
+					la protection <GlossaryTerm
+						term="antidémarrage"
+						definition="Le système qui empêche le moteur de démarrer sans la bonne clé."
+					/> et de déverrouiller les portes sans la clé.
 				</p>
 				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
 					Observez les différentes étapes de l’attaque ci-dessous.
@@ -198,9 +208,14 @@ import BMWLogo from "../assets/image16.svg";
 					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					En 2018, des chercheurs belges ont mis en évidence une
-					faiblesse permettant de cloner une clé de véhicule. Une clé
-					ou un smartphone peut alors devenir un point d'accès au
-					véhicule.
+					faiblesse permettant de <GlossaryTerm
+						term="cloner"
+						definition="Créer une copie qui ressemble et fonctionne comme l'original."
+					/> une clé de véhicule. Une clé ou un smartphone peut alors devenir
+					un <GlossaryTerm
+						term="point d'accès"
+						definition="Un moyen d'entrer dans un appareil ou un réseau."
+					/> au véhicule.
 				</p>
 				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
 					Répondez aux questions ci-dessous pour en découvrir plus.
@@ -246,10 +261,15 @@ import BMWLogo from "../assets/image16.svg";
 				<p
 					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
-					Deux chercheurs en sécurité ont découvert une faille dans le
-					service connecté d’un constructeur automobile. Cette
-					démonstration permet de comprendre comment une
-					fonctionnalité pratique peut devenir un vecteur d’exposition
+					Deux chercheurs en sécurité ont découvert une <GlossaryTerm
+						term="faille"
+						definition="Une faiblesse dans un système qu'une personne malveillante peut exploiter."
+					/> dans le service connecté d’un constructeur automobile. Cette
+					démonstration permet de comprendre comment une fonctionnalité
+					pratique peut devenir un <GlossaryTerm
+						term="vecteur d'exposition"
+						definition="Un moyen par lequel une information ou un système peut être exposé à un risque."
+					/>
 					lorsqu’elle n’est pas suffisamment protégée.
 				</p>
 				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
@@ -268,10 +288,11 @@ import BMWLogo from "../assets/image16.svg";
 					<p
 						class="mt-3 mb-0 text-[#46606b] text-[17px] leading-[1.6]"
 					>
-						Plus les véhicules sont connectés, plus le risque
-						d'usurpation d'identité augmente. Il est donc essentiel
-						de pouvoir vérifier l'identité des véhicules et des
-						systèmes avec lesquels ils communiquent.
+						Plus les véhicules sont connectés, plus le risque d'<GlossaryTerm
+							term="usurpation d'identité"
+							definition="Le fait de se faire passer pour une autre personne ou un autre appareil."
+						/> augmente. Il est donc essentiel de pouvoir vérifier l'identité
+						des véhicules et des systèmes avec lesquels ils communiquent.
 					</p>
 				</div>
 				<!-- BLOCS MÉTRIQUES CAS 2 -->
@@ -360,10 +381,15 @@ import BMWLogo from "../assets/image16.svg";
 					class="mb-[10px] text-[#46606b] text-[18px] leading-[1.65] m-0"
 				>
 					Dans ce premier cas, nous allons observer comment un service
-					connecté peut exposer des informations sensibles. En
-					comprenant le chemin parcouru par une donnée, il devient
-					plus facile d’identifier les points de vigilance et de
-					limiter la surface d’exposition.
+					connecté peut exposer des <GlossaryTerm
+						term="informations sensibles"
+						definition="Des informations privées dont la divulgation peut causer un problème."
+					/>. En comprenant le chemin parcouru par une donnée, il
+					devient plus facile d’identifier les points de vigilance et
+					de limiter la <GlossaryTerm
+						term="surface d'exposition"
+						definition="L'ensemble des points par lesquels un système peut être attaqué."
+					/>.
 				</p>
 				<p class="mb-4 text-[#0879ae] text-[17px] font-bold">
 					Entrez dans la peau de l’attaquant : lancez la simulation et
