@@ -6,7 +6,6 @@ import GlossaryCards from "../components/GlossaryCards.astro";
 import GlossaryTerm from "../components/GlossaryTerm.astro";
 import Footer from "../components/Footer.astro";
 
-
 const toyotaSteps = [
 	{
 		step: 1,
@@ -70,9 +69,7 @@ import WifiImg from "../assets/wifi.svg";
 ---
 
 <Layout>
-	<div
-		class="w-full min-h-screen text-[#071a27] font-sans antialiased"
-	>
+	<div class="w-full min-h-screen text-[#071a27] font-sans antialiased">
 		<main
 			class="w-full max-w-[100%] pb-[160px] [@media(max-width:800px)]:pb-[80px] flex flex-col items-stretch justify-center"
 		>
@@ -96,32 +93,45 @@ import WifiImg from "../assets/wifi.svg";
 				</div>
 
 				<!-- Main 2-column Hero -->
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center my-auto">
+				<div
+					class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center my-auto"
+				>
 					<!-- Left Column: Title and intro paragraphs -->
-					<div class="lg:col-span-7 flex flex-col gap-10 max-w-[620px]">
+					<div
+						class="lg:col-span-7 flex flex-col gap-10 max-w-[620px]"
+					>
 						<h1
 							class="Century Gothic text-[#0B5367] text-[clamp(48px,5.5vw,72px)] leading-[1.06] font-bold tracking-[-0.035em] text-balance m-0"
 						>
 							La menace de la<br />
 							piraterie<br />
 							automobile<br />
-							
 						</h1>
 
-						<div class="flex flex-col gap-6 top-5 text-[#345866] text-[18px] md:text-[19px] leading-[1.65] font-mona font-normal">
+						<div
+							class="flex flex-col gap-6 top-5 text-[#345866] text-[18px] md:text-[19px] leading-[1.65] font-mona font-normal"
+						>
 							<p class="m-0">
-								Ce module propose une lecture simple et concrète de situations réelles, 
-								pour mieux reconnaître les risques, adopter les bons réflexes, et protéger les données qui comptent.
+								Ce module propose une lecture simple et concrète
+								de situations réelles, pour mieux reconnaître
+								les risques, adopter les bons réflexes, et
+								protéger les données qui comptent.
 							</p>
 							<p class="m-0">
-								Car la règle est simple, plus un véhicule est connecté, plus sa surface d'exposition aux cyberattaques s'élargit.
+								Car la règle est simple, plus un véhicule est
+								connecté, plus sa surface d'exposition aux
+								cyberattaques s'élargit.
 							</p>
 						</div>
 					</div>
 
 					<!-- Right Column: Clustered Connected Vehicle Risk SVGs -->
-					<div class="lg:col-span-5 relative flex items-center justify-center lg:justify-end w-full py-4">
-						<div class="hero-icons-cluster relative w-[340px] sm:w-[420px] md:w-[480px] lg:w-[460px] xl:w-[510px] aspect-[1/0.92]">
+					<div
+						class="lg:col-span-5 relative flex items-center justify-center lg:justify-end w-full py-4"
+					>
+						<div
+							class="hero-icons-cluster relative w-[340px] sm:w-[420px] md:w-[480px] lg:w-[460px] xl:w-[510px] aspect-[1/0.92]"
+						>
 							<!-- Telephone Circle (top-left) -->
 							<div class="cluster-icon icon-phone">
 								<img
@@ -237,17 +247,34 @@ import WifiImg from "../assets/wifi.svg";
 						À retenir
 					</h3>
 					<ul
-						class="mt-3 mb-0 pl-5 text-[#46606b] text-[17px] leading-[1.6]"
+						class="mt-3 mb-0 pl-0 text-[#46606b] text-[17px] leading-[1.6]"
 					>
 						<li>
-							C’est fou ce qu’on peut faire en piratant un élément
-							aussi secondaire qu’un simple phare !
+							En 2023, de nombreux cas réels et témoignages ont
+							mis en lumière une méthode de vol redoutable
+							touchant des véhicules Toyota et Lexus : l'injection
+							de messages malveillants directement sur le réseau
+							CAN (le bus de communication interne de la voiture)
+							en se branchant sur les câbles du phare avant.
 						</li>
+						<br />
 						<li>
-							Avant que les véhicules ne deviennent de plus en
-							plus connectés, pirater une voiture nécessitait
-							généralement une intrusion physique, comme dans
-							cette attaque. Mais ça, c’était le monde d’avant.
+							Cette technique, dite « d'injection CAN », permet à
+							un attaquant de simuler la présence de la clé
+							officielle en quelques secondes seulement. Le
+							système d'antidémarrage est ainsi dupé de
+							l'intérieur, permettant d'ouvrir et de démarrer la
+							voiture sans laisser la moindre trace d'effraction.
+						</li>
+						<br />
+						<li>
+							Ce cas marque les esprits car il concrétise une peur
+							quotidienne : le vol en pleine rue, sous les
+							fenêtres, de manière totalement silencieuse et
+							ultra-rapide. Il rappelle que la sécurité d'un
+							véhicule moderne ne dépend pas seulement de ses
+							clés, mais aussi de la protection physique de ses
+							connexions électroniques externes.
 						</li>
 					</ul>
 				</div>
@@ -396,15 +423,37 @@ import WifiImg from "../assets/wifi.svg";
 					>
 						À retenir
 					</h3>
-					<p
-						class="mt-3 mb-0 text-[#46606b] text-[17px] leading-[1.6]"
+					<ul
+						class="mt-3 mb-0 pl-0 text-[#46606b] text-[17px] leading-[1.6]"
 					>
-						Plus les véhicules sont connectés, plus le risque d'<GlossaryTerm
-							term="usurpation d'identité"
-							definition="Le fait de se faire passer pour une autre personne ou un autre appareil."
-						/> augmente. Il est donc essentiel de pouvoir vérifier l'identité
-						des véhicules et des systèmes avec lesquels ils communiquent.
-					</p>
+						<li>
+							En 2015, une faille majeure touchant le système BMW
+							ConnectedDrive a été mise au jour grâce à un audit
+							de l'ADAC. Ce cas marque les esprits car il écorne
+							l'image d'une grande marque de prestige réputée pour
+							sa rigueur, tout en affectant plus de 2,2 millions
+							de véhicules (BMW, Mini et Rolls-Royce).
+						</li>
+						<br />
+						<li>
+							La vulnérabilité résidait dans la liaison sans fil
+							entre les serveurs du constructeur et la carte SIM
+							intégrée aux véhicules. En exploitant des faiblesses
+							dans le protocole de communication et l'absence de
+							chiffrement robuste pour certains échanges, des
+							chercheurs ont pu intercepter les signaux et simuler
+							de fausses connexions.
+						</li>
+						<br />
+						<li>
+							Cette intrusion a permis d'ouvrir les portières à
+							distance sans clé physique, démontrant que les
+							constructeurs de luxe doivent faire face aux mêmes
+							défis de cybersécurité que les entreprises
+							informatiques, la sécurité des logiciels embarqués
+							devenant aussi cruciale que la robustesse mécanique.
+						</li>
+					</ul>
 				</div>
 				<!-- BLOCS MÉTRIQUES CAS 2 -->
 				<h3
@@ -517,18 +566,40 @@ import WifiImg from "../assets/wifi.svg";
 						À retenir
 					</p>
 					<ul
-						class="mt-3 mb-0 pl-5 text-[#46606b] text-[17px] leading-[1.6]"
+						class="mt-3 mb-0 pl-0 text-[#46606b] text-[17px] leading-[1.6]"
 					>
 						<li>
-							Hacker un véhicule peut aujourd'hui se faire depuis
-							le canapé de son salon, sans même sortir de chez
-							soi.
+							Des chercheurs en cybersécurité ont mis en évidence
+							une vulnérabilité critique dans le portail
+							d'administration du service Starlink de Subaru,
+							affectant des centaines de milliers de véhicules. En
+							exploitant des failles informatiques (telles qu'une
+							réinitialisation de mot de passe sans jeton de
+							confirmation et un contournement de la double
+							authentification), ils ont pu s'emparer de comptes
+							employés.
 						</li>
+						<br />
 						<li>
-							Hacker un véhicule, ce n'est pas uniquement le
-							prendre en contrôle ou l'ouvrir pour le voler : il
-							contient aussi des informations sensibles qu'il est
-							essentiel de protéger.
+							Cette intrusion a révélé un accès total de type «
+							administrateur » permettant non seulement de
+							contrôler à distance les véhicules (verrouillage,
+							démarrage, géolocalisation en temps réel), mais
+							surtout d'accéder à une année d'historique de
+							déplacements des conducteurs et à des informations
+							personnelles sensibles (coordonnées, numéros de
+							téléphone, données de facturation).
+						</li>
+						<br />
+						<li>
+							Ce cas illustre à quel point la protection des
+							données personnelles est devenue indissociable de la
+							sécurité des objets connectés. Il rappelle que la
+							confiance envers une marque réputée ne suffit pas et
+							que les constructeurs automobiles doivent
+							impérativement sécuriser l'ensemble de leurs
+							serveurs et portails administratifs pour préserver
+							la vie privée des usagers.
 						</li>
 					</ul>
 				</div>
@@ -843,12 +914,13 @@ import WifiImg from "../assets/wifi.svg";
 		position: relative;
 		width: 100%;
 		user-select: none;
-		
 	}
 
 	.cluster-icon {
 		position: absolute;
-		transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.45s ease;
+		transition:
+			transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+			filter 0.45s ease;
 	}
 
 	.cluster-icon img {
@@ -865,7 +937,7 @@ import WifiImg from "../assets/wifi.svg";
 		top: 5%;
 		z-index: 2;
 		filter: drop-shadow(0 6px 14px rgba(97, 165, 196, 0.25));
-		rotate:  100deg;
+		rotate: 100deg;
 	}
 
 	.icon-phone:hover {
@@ -879,7 +951,7 @@ import WifiImg from "../assets/wifi.svg";
 		top: 1%;
 		z-index: 2;
 		filter: drop-shadow(0 10px 22px rgba(0, 36, 52, 0.16));
-		rotate:  180deg;
+		rotate: 180deg;
 	}
 
 	.icon-bluetooth:hover {
