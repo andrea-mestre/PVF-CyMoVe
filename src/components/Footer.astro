@@ -1,0 +1,239 @@
+---
+import partenaire1 from "../assets/partenaire1.svg";
+import partenaire2 from "../assets/partenaire2.svg";
+import partenaire3 from "../assets/partenaire3.svg";
+import partenaire4 from "../assets/partenaire4.svg";
+import partenaire5 from "../assets/partenaire5.svg";
+import partenaire6 from "../assets/partenaire6.svg";
+import partenaire7 from "../assets/partenaire7.svg";
+import partenaire8 from "../assets/partenaire8.svg";
+
+const partenaires = [
+    { src: partenaire1.src, alt: "Partenaire 1" },
+    { src: partenaire2.src, alt: "Partenaire 2" },
+    { src: partenaire3.src, alt: "Partenaire 3" },
+    { src: partenaire4.src, alt: "Partenaire 4" },
+    { src: partenaire5.src, alt: "Partenaire 5" },
+    { src: partenaire6.src, alt: "Partenaire 6" },
+    { src: partenaire7.src, alt: "Partenaire 7" },
+    { src: partenaire8.src, alt: "Partenaire 8" },
+];
+---
+
+<div class="py-12 px-6 md:px-16 relative overflow-hidden">
+    <!-- Effet lumineux subtil en arrière-plan -->
+    <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-7xl space-y-12 relative z-10 mx-auto">
+        <div>
+            <div class="flex items-center space-x-3 mb-3"></div>
+            <h3
+                class="text-sm font-bold uppercase tracking-wider text-blue-900"
+            >
+                Sources & Références documentaires
+            </h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Source 1 -->
+            <a
+                href="#source-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-4 rounded-xl bg-white border border-[#E2EEF5] hover:border-blue-400 hover:shadow-md transition-all duration-300 flex items-start space-x-3"
+            >
+                <div
+                    class="p-2 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                >
+                    <i class="fa-solid fa-link text-sm"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p
+                        class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide"
+                    >
+                        Source 01
+                    </p>
+                    <p
+                        class="text-sm font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors"
+                    >
+                        Rapport Officiel Sécurité Automobile
+                    </p>
+                    <span
+                        class="text-[11px] text-blue-600 font-medium flex items-center mt-1"
+                    >
+                        Consulter <i
+                            class="fa-solid fa-arrow-right-long ml-1.5 transform group-hover:translate-x-1 transition-transform"
+                        ></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Source 2 -->
+            <a
+                href="#source-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-4 rounded-xl bg-white border border-[#E2EEF5] hover:border-blue-400 hover:shadow-md transition-all duration-300 flex items-start space-x-3"
+            >
+                <div
+                    class="p-2 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                >
+                    <i class="fa-solid fa-file-shield text-sm"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p
+                        class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide"
+                    >
+                        Source 02
+                    </p>
+                    <p
+                        class="text-sm font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors"
+                    >
+                        Étude Vulnérabilités CAN & Clé
+                    </p>
+                    <span
+                        class="text-[11px] text-blue-600 font-medium flex items-center mt-1"
+                    >
+                        Consulter <i
+                            class="fa-solid fa-arrow-right-long ml-1.5 transform group-hover:translate-x-1 transition-transform"
+                        ></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Source 3 -->
+            <a
+                href="#source-3"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-4 rounded-xl bg-white border border-[#E2EEF5] hover:border-blue-400 hover:shadow-md transition-all duration-300 flex items-start space-x-3"
+            >
+                <div
+                    class="p-2 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                >
+                    <i class="fa-solid fa-shield-halved text-sm"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p
+                        class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide"
+                    >
+                        Source 03
+                    </p>
+                    <p
+                        class="text-sm font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors"
+                    >
+                        Analyses & Statistiques Nationales
+                    </p>
+                    <span
+                        class="text-[11px] text-blue-600 font-medium flex items-center mt-1"
+                    >
+                        Consulter <i
+                            class="fa-solid fa-arrow-right-long ml-1.5 transform group-hover:translate-x-1 transition-transform"
+                        ></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Source 4 -->
+            <a
+                href="#source-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group p-4 rounded-xl bg-white border border-[#E2EEF5] hover:border-blue-400 hover:shadow-md transition-all duration-300 flex items-start space-x-3"
+            >
+                <div
+                    class="p-2 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                >
+                    <i class="fa-solid fa-book-open text-sm"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p
+                        class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide"
+                    >
+                        Source 04
+                    </p>
+                    <p
+                        class="text-sm font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors"
+                    >
+                        Documentation Technique Constructeurs
+                    </p>
+                    <span
+                        class="text-[11px] text-blue-600 font-medium flex items-center mt-1"
+                    >
+                        Consulter <i
+                            class="fa-solid fa-arrow-right-long ml-1.5 transform group-hover:translate-x-1 transition-transform"
+                        ></i>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Section Partenaires en Scroll Infini -->
+    <div class="mt-12">
+        <div class="flex items-center justify-between mb-6 max-w-7xl mx-auto">
+            <div class="flex items-center space-x-3">
+                <h3
+                    class="text-sm font-bold uppercase tracking-wider text-blue-900"
+                >
+                    Nos Partenaires & Institutions
+                </h3>
+            </div>
+        </div>
+
+        <!-- Conteneur du carrousel -->
+        <div
+            class="relative w-full overflow-hidden flex [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        >
+            <div
+                class="flex animate-infinite-scroll space-x-16 items-center py-4 shrink-0"
+            >
+                {
+                    partenaires.map((partenaire) => (
+                        <div class="flex items-center justify-center min-w-[150px]">
+                            <img
+                                src={partenaire.src}
+                                alt={partenaire.alt}
+                                class="max-h-28 w-auto object-contain"
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+            <div
+                class="flex animate-infinite-scroll space-x-16 items-center py-4 shrink-0"
+                aria-hidden="true"
+            >
+                {
+                    partenaires.map((partenaire) => (
+                        <div class="flex items-center justify-center min-w-[150px]">
+                            <img
+                                src={partenaire.src}
+                                alt={partenaire.alt}
+                                class="max-h-28 w-auto object-contain"
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes infinite-scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-infinite-scroll {
+        animation: infinite-scroll 30s linear infinite;
+    }
+</style>
